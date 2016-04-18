@@ -1,0 +1,41 @@
+# .gitignore by jackon.me
+
+
+# self defined -- Django
+db.sqlite3
+media
+static
+local_settings.py
+
+*.log
+
+# Redis
+dump.rdb
+
+
+### python ###
+*.py[cod]
+__pycache__/
+*.so
+pip-log.txt
+
+
+### Vim ###
+.ropeproject/*
+[._]*.s[a-w][a-z]
+[._]s[a-w][a-z]
+*~
+
+### Pycharm ###
+.idea/*
+
+
+### Mac ###
+.DS_Store
+
+
+# SVN
+.svn
+
+
+!PLACEHOLDER
