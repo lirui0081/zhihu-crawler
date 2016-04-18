@@ -1,0 +1,2944 @@
+<!DOCTYPE html>
+<html lang="zh-CN" dropEffect="none" class="no-js ">
+<head>
+<meta charset="utf-8" />
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="renderer" content="webkit" />
+<meta http-equiv="X-ZA-Response-Id" content="8318cb59d4b24c2f97497df477dd1975">
+
+<title>
+
+Git 有什么奇技淫巧？ - 知乎
+
+</title>
+
+<meta name="apple-itunes-app" content="app-id=432274380, app-argument=zhihu://questions/27462267">
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta http-equiv="mobile-agent" content="format=html5;url=https://www.zhihu.com/question/27462267">
+<meta id="znonce" name="znonce" content="4a5d2f833ecf4b6a994aaf36b2f4ef8d">
+
+
+
+<link rel="apple-touch-icon" href="https://static.zhihu.com/static/revved/img/ios/touch-icon-152.87c020b9.png" sizes="152x152">
+<link rel="apple-touch-icon" href="https://static.zhihu.com/static/revved/img/ios/touch-icon-120.496c913b.png" sizes="120x120">
+<link rel="apple-touch-icon" href="https://static.zhihu.com/static/revved/img/ios/touch-icon-76.dcf79352.png" sizes="76x76">
+<link rel="apple-touch-icon" href="https://static.zhihu.com/static/revved/img/ios/touch-icon-60.9911cffb.png" sizes="60x60">
+
+
+<link rel="shortcut icon" href="https://static.zhihu.com/static/favicon.ico" type="image/x-icon">
+
+<link rel="search" type="application/opensearchdescription+xml" href="https://static.zhihu.com/static/search.xml" title="知乎" />
+<link rel="stylesheet" href="https://static.zhihu.com/static/revved/-/css/z.d4f4b4f3.css">
+
+
+
+
+
+<!--[if lt IE 9]>
+<script src="https://static.zhihu.com/static/components/respond/dest/respond.min.js"></script>
+<link href="https://static.zhihu.com/static/components/respond/cross-domain/respond-proxy.html" id="respond-proxy" rel="respond-proxy" />
+<link href="/static/components/respond/cross-domain/respond.proxy.gif" id="respond-redirect" rel="respond-redirect" />
+<script src="/static/components/respond/cross-domain/respond.proxy.js"></script>
+<![endif]-->
+<script src="https://static.zhihu.com/static/revved/-/js/instant.aef75fc3.js"></script>
+
+
+
+
+</head>
+
+<body class="zhi ">
+
+
+
+<div role="navigation" class="zu-top">
+<div class="zg-wrap modal-shifting clearfix" id="zh-top-inner">
+<a href="/" class="zu-top-link-logo" id="zh-top-link-logo" data-za-c="view_home" data-za-a="visit_home" data-za-l="top_navigation_zhihu_logo">知乎</a>
+
+<div class="top-nav-profile">
+<a href="/people/jackonyang" class="zu-top-nav-userinfo ">
+<span class="name">JackonYang</span>
+<img class="Avatar" src="https://pic1.zhimg.com/b742df688_s.jpg" srcset="https://pic1.zhimg.com/b742df688_xs.jpg 2x" alt="JackonYang" />
+<span id="zh-top-nav-new-pm" class="zg-noti-number zu-top-nav-pm-count"
+style="visibility:hidden" data-count="0">
+
+</span>
+</a>
+<ul class="top-nav-dropdown" id="top-nav-profile-dropdown">
+<li>
+<a href="/people/jackonyang">
+<i class="zg-icon zg-icon-dd-home"></i>我的主页
+</a>
+</li>
+
+<li>
+<a href="/inbox">
+<i class="zg-icon zg-icon-dd-pm"></i>私信
+<span id="zh-top-nav-pm-count" class="zu-top-nav-pm-count zg-noti-number"
+style="visibility:hidden" data-count="0">
+
+</span>
+</a>
+</li>
+<li>
+<a href="/settings">
+<i class="zg-icon zg-icon-dd-settings"></i>设置
+</a>
+</li>
+<li>
+<a href="/logout">
+<i class="zg-icon zg-icon-dd-logout"></i>退出
+</a>
+</li>
+</ul>
+
+</div>
+
+
+
+<button class="zu-top-add-question" id="zu-top-add-question">提问</button>
+
+
+<div role="search" id="zh-top-search" class="zu-top-search">
+<form method="GET" action="/search" id="zh-top-search-form" class="zu-top-search-form">
+
+
+
+<input type="hidden" name="type" value="content">
+<label for="q" class="hide-text">知乎搜索</label><input type="text" class="zu-top-search-input" id="q" name="q" autocomplete="off" value="" placeholder="搜索你感兴趣的内容...">
+<button type="submit" class="zu-top-search-button"><span class="hide-text">搜索</span><span class="sprite-global-icon-magnifier-dark"></span></button>
+</form>
+</div>
+
+
+
+<div id="zg-top-nav" class="zu-top-nav">
+<ul class="zu-top-nav-ul zg-clear">
+
+<li class="zu-top-nav-li " id="zh-top-nav-home">
+<a class="zu-top-nav-link" href="/" id="zh-top-link-home" data-za-c="view_home" data-za-a="visit_home" data-za-l="top_navigation_home">首页</a>
+</li>
+<li class="top-nav-topic-selector zu-top-nav-li " id="zh-top-nav-topic">
+<a class="zu-top-nav-link" href="/topic" id="top-nav-dd-topic">话题</a>
+</li>
+<li class="zu-top-nav-li " id="zh-top-nav-explore">
+<a class="zu-top-nav-link" href="/explore">发现</a>
+</li>
+
+<li class="top-nav-noti zu-top-nav-li ">
+<a class="zu-top-nav-link" href="javascript:;" id="zh-top-nav-count-wrap" role="button"><span class="mobi-arrow"></span>消息</a>
+</li>
+
+
+
+</ul>
+<div class="zu-top-nav-live zu-noti7-popup zg-r5px no-hovercard" id="zh-top-nav-live-new" role="popup" tabindex="0">
+<div class="zu-top-nav-live-inner zg-r5px">
+<div class="zu-top-live-icon">&nbsp;</div>
+<div class="zu-home-noti-inner" id="zh-top-nav-live-new-inner">
+<div class="zm-noti7-popup-tab-container clearfix" tabindex="0">
+<button class="zm-noti7-popup-tab-item message">
+<span class="icon">消息</span>
+</button>
+<button class="zm-noti7-popup-tab-item user">
+<span class="icon">用户</span>
+</button>
+<button class="zm-noti7-popup-tab-item thanks">
+<span class="icon">赞同和感谢</span>
+</button>
+</div>
+</div>
+<div class="zm-noti7-frame-border top"></div>
+<div class="zm-noti7-frame">
+<div class="zm-noti7-content">
+<div class="zm-noti7-content-inner">
+<div class="zm-noti7-content-body">
+<div class="zm-noti7-popup-loading">
+<span class="noti-spinner-loading"></span>
+</div>
+</div>
+</div>
+</div>
+<div class="zm-noti7-content" style="display:none;">
+<div class="zm-noti7-content-inner">
+<div class="zm-noti7-content-body">
+<div class="zm-noti7-popup-loading">
+<span class="noti-spinner-loading"></span>
+</div>
+</div>
+</div>
+</div>
+<div class="zm-noti7-content" style="display:none;">
+<div class="zm-noti7-content-inner">
+<div class="zm-noti7-content-body">
+<div class="zm-noti7-popup-loading">
+<span class="noti-spinner-loading"></span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="zm-noti7-frame-border bottom"></div>
+<div class="zm-noti7-popup-footer">
+<a href="/notifications" class="zm-noti7-popup-footer-all zg-right">查看全部 &raquo;</a>
+<a href="/settings/notification" class="zm-noti7-popup-footer-set" title="通知设置" ><i class="zg-icon zg-icon-settings"></i></a>
+</div>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+<div class="zu-global-notify" id="zh-global-message" style="display:none">
+<div class="zg-wrap">
+<div class="zu-global-nitify-inner">
+<a class="zu-global-notify-close" href="javascript:;" title="关闭" name="close">x</a>
+<span class="zu-global-notify-icon"></span>
+<span class="zu-global-notify-msg"></span>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+<div class="zu-global-notify zu-global-notify-info" id="zh-question-redirect-info" style="display:none"></div>
+
+
+<div class="zu-global-notify zu-global-notify-info" id="zh-question-notification-summary" style="display:none;">
+<div class="zg-wrap">
+<div class="zu-global-nitify-inner">
+<span class="zu-global-notify-icon"></span>
+<ul class="zu-question-notify-wrap">
+</ul>
+</div>
+</div>
+</div>
+
+
+<div class="zg-wrap zu-main clearfix with-indention-votebar" itemscope itemtype="http://schema.org/Question" id="zh-single-question-page" data-urltoken="27462267" role="main">
+<div class="zu-main-content">
+<div class="zu-main-content-inner">
+
+
+<meta itemprop="isTopQuestion" content="false" />
+<meta itemprop="visitsCount" content="10073" />
+
+
+
+
+<div class="zm-tag-editor zg-section">
+<div class="zm-tag-editor-labels zg-clear">
+
+<a class="zm-item-tag"
+href="/topic/19557710"
+data-tip="t$b$19557710" data-token="19557710" data-topicid="2517">
+Git
+</a>
+
+<a class="zm-item-tag"
+href="/topic/19569388"
+data-tip="t$b$19569388" data-token="19569388" data-topicid="6401">
+X 使用技巧
+</a>
+
+</div>
+</div>
+<div id="zh-question-title" data-editable="true">
+
+<h2 class="zm-item-title zm-editable-content">
+
+Git 有什么奇技淫巧？
+
+</h2>
+</div>
+<div id="zh-question-detail" class="zm-item-rich-text" data-resourceid="3167780" data-action="/question/detail">
+
+<div class="zm-editable-content"></div>
+
+
+<div class="zm-editable-tip">
+<a class="zg-link-litblue-normal" href="javascript:;" name="edit"><i class="zg-icon zg-icon-edit-button-blue"></i>写补充说明</a>
+</div>
+
+</div>
+<div class="zm-item-meta zm-item-comment-el clearfix" id="zh-question-meta-wrap">
+<div class="zm-meta-panel">
+
+<a href="#" name="report-question" class="report zg-right">
+<i class="z-icon-report-o"></i>举报</a>
+
+<a href="#" name="addcomment" class="toggle-comment meta-item">
+<i class="z-icon-comment"></i>添加评论
+</a>
+<a href="#" name="share" class="share meta-item">
+<i class="z-icon-share"></i>分享
+</a>
+
+
+<span class="zg-bull">&bull;</span>
+<a href="#" name="invite" class="meta-item">邀请回答</a>
+
+
+
+
+</div>
+<div class="panel-container">
+
+</div>
+</div>
+
+<div class="zh-answers-title clearfix">
+
+<div id="zh-answers-filter" class="Sorter">
+
+<span class="lbl">按投票排序</span>
+<a class="lbl" href="/question/27462267?sort=created">按时间排序</a>
+
+<i class="zg-icon zg-icon-double-arrow"></i>
+</div>
+
+<h3 data-num="22" id="zh-question-answer-num">22 个回答</h3>
+</div>
+<div class="zh-question-answer-summary-wrap zm-item-rich-text" id="zh-question-answer-summary-wrap" style="display:none;">
+<h3>
+<a href="http://www.zhihu.com/question/20014415" target="_blank" class="zg-right zg-link-litblue" style="font-weight:normal">什么是答案总结？</a>
+答案总结</h3>
+<div id="zh-question-answer-summary" class="zg-section"
+data-resourceid="3167780" data-action="/question/summary">
+
+<div class="zm-editable-content"></div>
+
+</div>
+</div>
+
+<div id="zh-question-answer-wrap" data-pagesize="20" class="zh-question-answer-wrapper" data-widget="navigable" data-navigable-options="{&quot;items&quot;: &quot;&gt;.zm-item-answer&quot;}" data-init="{&quot;params&quot;: {&quot;url_token&quot;: 27462267, &quot;pagesize&quot;: 20, &quot;offset&quot;: 0}, &quot;nodename&quot;: &quot;QuestionAnswerListV2&quot;}">
+
+
+<div tabindex="-1" class="zm-item-answer  zm-item-expanded"
+
+itemprop="topAnswer"
+
+itemscope itemtype="http://schema.org/Answer"
+data-aid="10096571"
+data-atoken="36765271"
+data-collapsed="0"
+data-created="1420701034"
+data-deleted="0"
+data-helpful="1"
+data-isowner="0"
+data-copyable="1"
+
+
+>
+<a class="zg-anchor-hidden" name="answer-10096571"></a>
+
+
+<div class="zm-votebar">
+<button class="up ">
+<i class="icon vote-arrow"></i>
+<span class="count">74</span>
+<span class="label sr-only">赞同</span>
+</button>
+<button class="down ">
+<i class="icon vote-arrow"></i>
+<span class="label sr-only">反对</span>
+</button>
+</div>
+
+
+<div class="answer-head">
+<div class="zm-item-answer-author-info">
+
+<a class="zm-item-link-avatar avatar-link" href="/people/interskh" target="_blank" data-tip="p$t$interskh">
+<img src="https://pic3.zhimg.com/9bfc5cc62_s.jpg" class="zm-list-avatar avatar">
+</a>
+
+<a class="author-link" data-tip="p$t$interskh" target="_blank" href="/people/interskh">尚凯儿</a><span title="o.O" class="bio">，o.O</span>
+</div>
+<div class="zm-item-vote-info " data-votecount="74">
+
+<span class="voters text">
+<span class="user-block"><a data-tip="p$t$andyiac" href="https://www.zhihu.com/people/andyiac" target="_blank" class="zg-link" title="andyiac zhang">andyiac zhang</a>、</span><span class="user-block"><a data-tip="p$t$jade-shan-10" href="https://www.zhihu.com/people/jade-shan-10" target="_blank" class="zg-link" title="Jade Shan">Jade Shan</a>、</span><span class="user-block"><a data-tip="p$t$fayewu.sinaapp.com" href="https://www.zhihu.com/people/fayewu.sinaapp.com" target="_blank" class="zg-link" title="faye">faye</a></span>
+</span>
+
+
+<a href="javascript:;" class="more text"> 等人赞同</a>
+
+
+
+
+</div>
+</div>
+<div class="zm-item-rich-text js-collapse-body" data-resourceid="3167780" data-action="/answer/content" data-author-name="尚凯儿" data-entry-url="/question/27462267/answer/36765271">
+
+
+<div class="zh-summary summary clearfix" style="display:none;">
+
+git bisect
+有没有过写了一天的代码，checkin无数，结果突然发现之前没注意的地方break的时候？这个时候要在茫茫commits里寻找那个错误的commit是多么的痛苦啊。`git-bisect`就是大救星！git-bisect本质上就是一个二分法，用起来也很简单：git bisect start…
+
+<a href="/question/27462267/answer/36765271" class="toggle-expand">显示全部</a>
+
+</div>
+
+
+<div class="zm-editable-content clearfix">
+<div class="highlight"><pre><code class="language-text">git bisect
+</code></pre></div>有没有过写了一天的代码，checkin无数，结果突然发现之前没注意的地方break的时候？<br><br>这个时候要在茫茫commits里寻找那个错误的commit是多么的痛苦啊。`git-bisect`就是大救星！<br><br>git-bisect本质上就是一个二分法，用起来也很简单：<br><div class="highlight"><pre><code class="language-text">git bisect start        #start
+git bisect bad          #current branch is bad
+git bisect good &lt;SHA-1&gt; #some old commit that is good
+</code></pre></div>然后只要不停的告诉git当前commit是不是好的，<br><div class="highlight"><pre><code class="language-text">git bisect good
+</code></pre></div>或者<br><div class="highlight"><pre><code class="language-text">git bisect bad
+</code></pre></div>就能找到罪魁祸首了！
+
+</div>
+
+</div>
+<a class="zg-anchor-hidden ac" name="10096571-comment"></a>
+<div class="zm-item-meta zm-item-comment-el answer-actions clearfix">
+<div class="zm-meta-panel">
+
+<span class="answer-date-link-wrap">
+<a class="answer-date-link meta-item" target="_blank" href="/question/27462267/answer/36765271">发布于 2015-01-08</a>
+</span>
+
+<a href="#" name="addcomment" class=" meta-item toggle-comment">
+<i class="z-icon-comment"></i>3 条评论</a>
+
+
+<a href="#" class="meta-item zu-autohide" name="thanks" data-thanked="false"><i class="z-icon-thank"></i>感谢</a>
+
+
+
+<a href="#" class="meta-item zu-autohide" name="share">
+<i class="z-icon-share"></i>分享</a>
+<a href="#" class="meta-item zu-autohide" name="favo">
+<i class="z-icon-collect"></i>收藏</a>
+
+
+
+
+<span class="zg-bull zu-autohide">&bull;</span>
+
+<a href="#" name="nohelp" class="meta-item zu-autohide">没有帮助</a>
+
+<span class="zg-bull zu-autohide">&bull;</span>
+<a href="#" name="report" class="meta-item zu-autohide">举报</a>
+
+
+
+<span class="zg-bull">&bull;</span>
+
+<a href="/terms#sec-licence-1" target="_blank" class="meta-item copyright"> 作者保留权利 </a>
+
+
+
+</div>
+</div>
+</div>
+
+<div tabindex="-1" class="zm-item-answer  zm-item-expanded"
+
+itemscope itemtype="http://schema.org/Answer"
+data-aid="24120252"
+data-atoken="71747355"
+data-collapsed="0"
+data-created="1447226071"
+data-deleted="0"
+data-helpful="1"
+data-isowner="0"
+data-copyable="1"
+
+
+>
+<a class="zg-anchor-hidden" name="answer-24120252"></a>
+
+
+<div class="zm-votebar">
+<button class="up ">
+<i class="icon vote-arrow"></i>
+<span class="count">33</span>
+<span class="label sr-only">赞同</span>
+</button>
+<button class="down ">
+<i class="icon vote-arrow"></i>
+<span class="label sr-only">反对</span>
+</button>
+</div>
+
+
+<div class="answer-head">
+<div class="zm-item-answer-author-info">
+
+<a class="zm-item-link-avatar avatar-link" href="/people/yangsen" target="_blank" data-tip="p$t$yangsen">
+<img src="https://pic4.zhimg.com/79825af73_s.jpg" class="zm-list-avatar avatar">
+</a>
+
+<a class="author-link" data-tip="p$t$yangsen" target="_blank" href="/people/yangsen">杨森</a><span title="想不想来阿里一起愉快的写代码？请私信简历" class="bio">，想不想来阿里一起愉快的写代码？请私信简历</span>
+</div>
+<div class="zm-item-vote-info " data-votecount="33">
+
+<span class="voters text">
+<span class="user-block"><a data-tip="p$t$alexzhang2015" href="https://www.zhihu.com/people/alexzhang2015" target="_blank" class="zg-link" title="alex zhang">alex zhang</a>、</span><span class="user-block"><a data-tip="p$t$zhulegequ" href="https://www.zhihu.com/people/zhulegequ" target="_blank" class="zg-link" title="猪了个去">猪了个去</a>、</span><span class="user-block"><a data-tip="p$t$elilien" href="https://www.zhihu.com/people/elilien" target="_blank" class="zg-link" title="elilien">elilien</a></span>
+</span>
+
+
+<a href="javascript:;" class="more text"> 等人赞同</a>
+
+
+
+
+</div>
+</div>
+<div class="zm-item-rich-text js-collapse-body" data-resourceid="3167780" data-action="/answer/content" data-author-name="杨森" data-entry-url="/question/27462267/answer/71747355">
+
+
+<div class="zh-summary summary clearfix" style="display:none;">
+
+1. 在尝试过所有命令都不能把你从深渊里挽救出来的时候，git reflog 也许能救你一命。比如撤销一次 rebase（rebase 可是会直接修改历史的，一定要了解原理后再使用） <a href="//link.zhihu.com/?target=http%3A//stackoverflow.com/questions/134882/undoing-a-git-rebase" class=" wrap external" target="_blank" rel="nofollow noreferrer">Undoing a git rebase<i class="icon-external"></i></a>2. 每次 merge 完总是出现很多 .orig 文件，使用 git clean -f 干掉…
+
+<a href="/question/27462267/answer/71747355" class="toggle-expand">显示全部</a>
+
+</div>
+
+
+<div class="zm-editable-content clearfix">
+1. 在尝试过所有命令都不能把你从深渊里挽救出来的时候，git reflog 也许能救你一命。<br><br>比如撤销一次 rebase（rebase 可是会直接修改历史的，一定要了解原理后再使用） <a href="//link.zhihu.com/?target=http%3A//stackoverflow.com/questions/134882/undoing-a-git-rebase" class=" wrap external" target="_blank" rel="nofollow noreferrer">Undoing a git rebase<i class="icon-external"></i></a><br><br>2. 每次 merge 完总是出现很多 .orig 文件，使用 git clean -f  干掉所有 untracked files<br><br>3. rebase 一个 diverged 分支一直要解决冲突很痛苦，可以尝试在自己的分支先 squash 一下，git rebase -i，然后再 rebase 主干，解决一次冲突就 ok 了<br><br>4. 本地有很多其实早就被删除的远程分支，可以用 git remote prune origin 全部清除掉，这样再 checkout 别的分支时就清晰多了
+
+</div>
+
+</div>
+<a class="zg-anchor-hidden ac" name="24120252-comment"></a>
+<div class="zm-item-meta zm-item-comment-el answer-actions clearfix">
+<div class="zm-meta-panel">
+
+<span class="answer-date-link-wrap">
+<a class="answer-date-link last_updated meta-item" data-tip="s$t$发布于 2015-11-11" target="_blank" href="/question/27462267/answer/71747355">编辑于 2015-11-11</a>
+</span>
+
+<a href="#" name="addcomment" class=" meta-item toggle-comment">
+<i class="z-icon-comment"></i>3 条评论</a>
+
+
+<a href="#" class="meta-item zu-autohide" name="thanks" data-thanked="false"><i class="z-icon-thank"></i>感谢</a>
+
+
+
+<a href="#" class="meta-item zu-autohide" name="share">
+<i class="z-icon-share"></i>分享</a>
+<a href="#" class="meta-item zu-autohide" name="favo">
+<i class="z-icon-collect"></i>收藏</a>
+
+
+
+
+<span class="zg-bull zu-autohide">&bull;</span>
+
+<a href="#" name="nohelp" class="meta-item zu-autohide">没有帮助</a>
+
+<span class="zg-bull zu-autohide">&bull;</span>
+<a href="#" name="report" class="meta-item zu-autohide">举报</a>
+
+
+
+<span class="zg-bull">&bull;</span>
+
+<a href="/terms#sec-licence-1" target="_blank" class="meta-item copyright"> 作者保留权利 </a>
+
+
+
+</div>
+</div>
+</div>
+
+<div tabindex="-1" class="zm-item-answer  zm-item-expanded"
+
+itemscope itemtype="http://schema.org/Answer"
+data-aid="29380863"
+data-atoken="84873613"
+data-collapsed="0"
+data-created="1454580061"
+data-deleted="0"
+data-helpful="1"
+data-isowner="0"
+data-copyable="1"
+
+
+>
+<a class="zg-anchor-hidden" name="answer-29380863"></a>
+
+
+<div class="zm-votebar">
+<button class="up ">
+<i class="icon vote-arrow"></i>
+<span class="count">105</span>
+<span class="label sr-only">赞同</span>
+</button>
+<button class="down ">
+<i class="icon vote-arrow"></i>
+<span class="label sr-only">反对</span>
+</button>
+</div>
+
+
+<div class="answer-head">
+<div class="zm-item-answer-author-info">
+
+<a class="zm-item-link-avatar avatar-link" href="/people/ling-long-xie-seng" target="_blank" data-tip="p$t$ling-long-xie-seng">
+<img src="https://pic2.zhimg.com/2131c1a04b2c812326a042b52579dd29_s.jpg" class="zm-list-avatar avatar">
+</a>
+
+<a class="author-link" data-tip="p$t$ling-long-xie-seng" target="_blank" href="/people/ling-long-xie-seng">玲珑邪僧</a><span title="web前端工程师/Android开发/Ruby on Rails" class="bio">，web前端工程师/Android开发/Ruby on Rails</span>
+</div>
+<div class="zm-item-vote-info " data-votecount="105">
+
+<span class="voters text">
+<span class="user-block"><a data-tip="p$t$a-sen-na-38" href="https://www.zhihu.com/people/a-sen-na-38" target="_blank" class="zg-link" title="曾坤鹏">曾坤鹏</a>、</span><span class="user-block"><a data-tip="p$t$terry-10" href="https://www.zhihu.com/people/terry-10" target="_blank" class="zg-link" title="Terry">Terry</a>、</span><span class="user-block"><a data-tip="p$t$xiaokangzhu" href="https://www.zhihu.com/people/xiaokangzhu" target="_blank" class="zg-link" title="朱焕坤">朱焕坤</a></span>
+</span>
+
+
+<a href="javascript:;" class="more text"> 等人赞同</a>
+
+
+
+
+</div>
+</div>
+<div class="zm-item-rich-text js-collapse-body" data-resourceid="3167780" data-action="/answer/content" data-author-name="玲珑邪僧" data-entry-url="/question/27462267/answer/84873613">
+
+
+<div class="zh-summary summary clearfix" style="display:none;">
+<img src="https://pic1.zhimg.com/d46ad00325ce8fd383fb3305de52a9c0_200x112.jpg" data-rawwidth="960" data-rawheight="1280" class="origin_image inline-img zh-lightbox-thumb" data-original="https://pic1.zhimg.com/d46ad00325ce8fd383fb3305de52a9c0_r.jpg">
+上面有答主提到过rebase的用法，正好最近用到了这个指令，那我就分享一下我在解决冲突时对git rebase的用法吧~场景还原一下：我在stash里提交了一个pull requst，但我的branch还没有到merge到develop上的时候，就有另一个和我修改了同一个文件的branch被合…
+
+<a href="/question/27462267/answer/84873613" class="toggle-expand">显示全部</a>
+
+</div>
+
+
+<div class="zm-editable-content clearfix">
+上面有答主提到过rebase的用法，正好最近用到了这个指令，那我就分享一下我在解决冲突时对git rebase的用法吧~<br>场景还原一下：<br>我在stash里提交了一个pull requst，但我的branch还没有到merge到develop上的时候，就有另一个和我修改了同一个文件的branch被合并到了主支。<br>那么现在我的分支就会出现conflict，必须得解决冲突后才能进行下一步的merge操作。<br>那么我们先假设，<br>我创建的分支叫"ling_long" <br>先被合并到主支develop上即别人创建的分支叫"xie_seng" <br>（。。。我不管我的分支就要叫这个名字。。<br><br>我以往的做法是:<br>1.先切换到主支develop上，pull下最新的代码。<br>2.然后切换到我的分支，并将develop merge到我的分支上。<br>3.这个时候就会出现conflict提示，再根据提示解决conflict，merge成功进行。<br>4.最后将合并过的分支commit到远程。<br><br>画一张图描述一下：<br><noscript><img src="https://pic1.zhimg.com/d46ad00325ce8fd383fb3305de52a9c0_b.jpg" data-rawwidth="960" data-rawheight="1280" class="origin_image zh-lightbox-thumb" width="960" data-original="https://pic1.zhimg.com/d46ad00325ce8fd383fb3305de52a9c0_r.jpg"></noscript><img src="//zhstatic.zhihu.com/assets/zhihu/ztext/whitedot.jpg" data-rawwidth="960" data-rawheight="1280" class="origin_image zh-lightbox-thumb lazy" width="960" data-original="https://pic1.zhimg.com/d46ad00325ce8fd383fb3305de52a9c0_r.jpg" data-actualsrc="https://pic1.zhimg.com/d46ad00325ce8fd383fb3305de52a9c0_b.jpg"><br>分支“ling_long"在图中标示为”玲珑“<br>分支“邪僧”在图中标示为“邪僧”<br>感觉描述起来的话中文比英语好区分。。。<br><br>从下往上看起：<br>我们可以看到我创建了一个名为“玲珑”的branch，修改了zhihu.js文件并进行了两次commit<br>团队中其他的人创建了一个名为“邪僧”的branch，同样修改了zhihu.js文件并进行两次commit。<br>这时候“邪僧”优先被merge进了develop，这个时候，“玲珑”就会被提示出现confict。如果按照上文描述的方法进行pull然后merge的话，我们可以看到“邪僧”的分支上的所有commit记录会被合并到“玲珑”身上。这个时候玲珑再进行commit的时候就会将“邪僧”的commit记录一起提交上去。这样的话，不仅不利于code reviewer审查代码，也会让记录变得凌乱不干净。<br><br>那么这个时候，利用rebase这个指令的优势就会体现出来。<br>1.<div class="highlight"><pre><code class="language-text"> $ git fetch origin develop 
+</code></pre></div>拉下远端develop更新<br>2. <div class="highlight"><pre><code class="language-text">$ git checkout ling_long
+</code></pre></div>切换到自己的分支<br>3.<div class="highlight"><pre><code class="language-text">$ git rebase -i develop
+</code></pre></div>rebase ling_long 分支到develop上<br>4.解决冲突<br>5.<div class="highlight"><pre><code class="language-text">$ git add app/lalala/zhihu.js
+</code></pre></div>git add 修改后的文件<br>6.<div class="highlight"><pre><code class="language-text">$ git diff -cached 
+</code></pre></div>可以检查一下代码变更的部分<br>7.<div class="highlight"><pre><code class="language-text">$ git rebase --continue
+</code></pre></div>8.<br><div class="highlight"><pre><code class="language-text">$ git push -f origin ling_long:ling_long
+</code></pre></div>强行更新ling_long branch<br><br>继续用图直观地看一下：<br><noscript><img src="https://pic4.zhimg.com/6b70b4e22b9a0865d57122252be1b3d3_b.jpg" data-rawwidth="916" data-rawheight="1280" class="origin_image zh-lightbox-thumb" width="916" data-original="https://pic4.zhimg.com/6b70b4e22b9a0865d57122252be1b3d3_r.jpg"></noscript><img src="//zhstatic.zhihu.com/assets/zhihu/ztext/whitedot.jpg" data-rawwidth="916" data-rawheight="1280" class="origin_image zh-lightbox-thumb lazy" width="916" data-original="https://pic4.zhimg.com/6b70b4e22b9a0865d57122252be1b3d3_r.jpg" data-actualsrc="https://pic4.zhimg.com/6b70b4e22b9a0865d57122252be1b3d3_b.jpg"><br>其实就是把“玲珑”branch移到了上面<br><noscript><img src="https://pic4.zhimg.com/4fb7729fbc3fe257be65aa08438731b3_b.jpg" data-rawwidth="872" data-rawheight="1280" class="origin_image zh-lightbox-thumb" width="872" data-original="https://pic4.zhimg.com/4fb7729fbc3fe257be65aa08438731b3_r.jpg"></noscript><img src="//zhstatic.zhihu.com/assets/zhihu/ztext/whitedot.jpg" data-rawwidth="872" data-rawheight="1280" class="origin_image zh-lightbox-thumb lazy" width="872" data-original="https://pic4.zhimg.com/4fb7729fbc3fe257be65aa08438731b3_r.jpg" data-actualsrc="https://pic4.zhimg.com/4fb7729fbc3fe257be65aa08438731b3_b.jpg"><br>让它始终保持在tree的顶端。<br><br>对了<br>当你执行<br><div class="highlight"><pre><code class="language-text">$ git rebase -i develop
+</code></pre></div>其实你会进入vim模式，如果你在ling_long上有两次commmit，如果第二次commit是对第一次commit的补充，你可以根据上面的提示进行合并，一般就是把pick改成s就可以。这个具体情况具体分析吧，我就不多描述啦。<br><br>如果有不对的地方还望前辈们多多指正。
+
+</div>
+
+</div>
+<a class="zg-anchor-hidden ac" name="29380863-comment"></a>
+<div class="zm-item-meta zm-item-comment-el answer-actions clearfix">
+<div class="zm-meta-panel">
+
+<span class="answer-date-link-wrap">
+<a class="answer-date-link last_updated meta-item" data-tip="s$t$发布于 2016-02-04" target="_blank" href="/question/27462267/answer/84873613">编辑于 2016-02-04</a>
+</span>
+
+<a href="#" name="addcomment" class=" meta-item toggle-comment">
+<i class="z-icon-comment"></i>65 条评论</a>
+
+
+<a href="#" class="meta-item zu-autohide" name="thanks" data-thanked="false"><i class="z-icon-thank"></i>感谢</a>
+
+
+
+<a href="#" class="meta-item zu-autohide" name="share">
+<i class="z-icon-share"></i>分享</a>
+<a href="#" class="meta-item zu-autohide" name="favo">
+<i class="z-icon-collect"></i>收藏</a>
+
+
+
+
+<span class="zg-bull zu-autohide">&bull;</span>
+
+<a href="#" name="nohelp" class="meta-item zu-autohide">没有帮助</a>
+
+<span class="zg-bull zu-autohide">&bull;</span>
+<a href="#" name="report" class="meta-item zu-autohide">举报</a>
+
+
+
+<span class="zg-bull">&bull;</span>
+
+<a href="/terms#sec-licence-1" target="_blank" class="meta-item copyright"> 作者保留权利 </a>
+
+
+
+</div>
+</div>
+</div>
+
+<div tabindex="-1" class="zm-item-answer  zm-item-expanded"
+
+itemscope itemtype="http://schema.org/Answer"
+data-aid="10436690"
+data-atoken="37614339"
+data-collapsed="0"
+data-created="1421719486"
+data-deleted="0"
+data-helpful="1"
+data-isowner="0"
+data-copyable="1"
+
+
+>
+<a class="zg-anchor-hidden" name="answer-10436690"></a>
+
+
+<div class="zm-votebar">
+<button class="up ">
+<i class="icon vote-arrow"></i>
+<span class="count">35</span>
+<span class="label sr-only">赞同</span>
+</button>
+<button class="down ">
+<i class="icon vote-arrow"></i>
+<span class="label sr-only">反对</span>
+</button>
+</div>
+
+
+<div class="answer-head">
+<div class="zm-item-answer-author-info">
+
+<a class="zm-item-link-avatar avatar-link" href="/people/lexdene" target="_blank" data-tip="p$t$lexdene">
+<img src="https://pic3.zhimg.com/c8fad82e230bd36f9153f2a5453ebdc6_s.png" class="zm-list-avatar avatar">
+</a>
+
+<a class="author-link" data-tip="p$t$lexdene" target="_blank" href="/people/lexdene">刘项</a><span title="github.com/lexdene" class="bio">，<a href="//link.zhihu.com/?target=http%3A//github.com/lexdene" class=" external" target="_blank" rel="nofollow noreferrer"><span class="invisible">http://</span><span class="visible">github.com/lexdene</span><span class="invisible"></span><i class="icon-external"></i></a></span>
+</div>
+<div class="zm-item-vote-info " data-votecount="35">
+
+<span class="voters text">
+<span class="user-block"><a data-tip="p$t$lxt-shenhua" href="https://www.zhihu.com/people/lxt-shenhua" target="_blank" class="zg-link" title="lxt shenhua">lxt shenhua</a>、</span><span class="user-block"><a data-tip="p$t$lincwee" href="https://www.zhihu.com/people/lincwee" target="_blank" class="zg-link" title="lincwee">lincwee</a>、</span><span class="user-block"><a data-tip="p$t$yin-jie-min" href="https://www.zhihu.com/people/yin-jie-min" target="_blank" class="zg-link" title="尹杰民">尹杰民</a></span>
+</span>
+
+
+<a href="javascript:;" class="more text"> 等人赞同</a>
+
+
+
+
+</div>
+</div>
+<div class="zm-item-rich-text js-collapse-body" data-resourceid="3167780" data-action="/answer/content" data-author-name="刘项" data-entry-url="/question/27462267/answer/37614339">
+
+
+<div class="zh-summary summary clearfix" style="display:none;">
+
+谢邀。我的git水平很菜，写个回答，希望能抛砖引玉吧。1. git add -p以前我git add的时候，经常会把一些本地的用于调试的代码add进去（比如console.log之类的），git add -p可以一段一段地add，每一段都会问你要不要添加（y/n?）。2. git rebase -i有的时候…
+
+<a href="/question/27462267/answer/37614339" class="toggle-expand">显示全部</a>
+
+</div>
+
+
+<div class="zm-editable-content clearfix">
+谢邀。<br>我的git水平很菜，写个回答，希望能抛砖引玉吧。<br><br>1. git add -p<br>以前我git add的时候，经常会把一些本地的用于调试的代码add进去（比如console.log之类的），git add -p可以一段一段地add，每一段都会问你要不要添加（y/n?）。<br><br>2. git rebase -i<br>有的时候出现临时需求，需要切换分支。本地完成一半的工作会commit成一个temp save。<br>git rebase -i 可以修改、增加、删除、合并任意的commit。<br><br>3. git diff master...<br>注意，是3个点，不是2个点。<br>新开发一个功能，会创建一个新的branch。在开发新的branch的期间，master也会增加很多代码。如果用2个点进行diff，会把master的新增代码显示出来。用3个点进行diff，只会显示当前分支与master的最近公共祖先与当前分支的差异。<br><br>4. git push -u<br>如果当前分支没有设置过track，这个命令会在push的同时，设置track。<br><div class="highlight"><pre><code class="language-text">Branch feature_xxx set up to track remote branch feature_xxx from origin.
+</code></pre></div>有了track，有3个好处。<br><ol><li>git status的时候可以显示领先/落后的多少个commit。</li><li>git push的时候可以省略后两个参数。</li><li>git pull的时候可以省略后两个参数。</li></ol>
+
+</div>
+
+</div>
+<a class="zg-anchor-hidden ac" name="10436690-comment"></a>
+<div class="zm-item-meta zm-item-comment-el answer-actions clearfix">
+<div class="zm-meta-panel">
+
+<span class="answer-date-link-wrap">
+<a class="answer-date-link meta-item" target="_blank" href="/question/27462267/answer/37614339">发布于 2015-01-20</a>
+</span>
+
+<a href="#" name="addcomment" class=" meta-item toggle-comment">
+<i class="z-icon-comment"></i>3 条评论</a>
+
+
+<a href="#" class="meta-item zu-autohide" name="thanks" data-thanked="false"><i class="z-icon-thank"></i>感谢</a>
+
+
+
+<a href="#" class="meta-item zu-autohide" name="share">
+<i class="z-icon-share"></i>分享</a>
+<a href="#" class="meta-item zu-autohide" name="favo">
+<i class="z-icon-collect"></i>收藏</a>
+
+
+
+
+<span class="zg-bull zu-autohide">&bull;</span>
+
+<a href="#" name="nohelp" class="meta-item zu-autohide">没有帮助</a>
+
+<span class="zg-bull zu-autohide">&bull;</span>
+<a href="#" name="report" class="meta-item zu-autohide">举报</a>
+
+
+
+<span class="zg-bull">&bull;</span>
+
+<a href="/terms#sec-licence-1" target="_blank" class="meta-item copyright"> 作者保留权利 </a>
+
+
+
+</div>
+</div>
+</div>
+
+<div tabindex="-1" class="zm-item-answer  zm-item-expanded"
+
+itemscope itemtype="http://schema.org/Answer"
+data-aid="10082741"
+data-atoken="36730839"
+data-collapsed="0"
+data-created="1420661110"
+data-deleted="0"
+data-helpful="1"
+data-isowner="0"
+data-copyable="1"
+
+
+>
+<a class="zg-anchor-hidden" name="answer-10082741"></a>
+
+
+<div class="zm-votebar">
+<button class="up ">
+<i class="icon vote-arrow"></i>
+<span class="count">14</span>
+<span class="label sr-only">赞同</span>
+</button>
+<button class="down ">
+<i class="icon vote-arrow"></i>
+<span class="label sr-only">反对</span>
+</button>
+</div>
+
+
+<div class="answer-head">
+<div class="zm-item-answer-author-info">
+
+<a class="zm-item-link-avatar avatar-link" href="/people/tian-ya-wen-60-59" target="_blank" data-tip="p$t$tian-ya-wen-60-59">
+<img src="https://pic4.zhimg.com/74fbe60032663221f812bd64eabfbd5b_s.jpg" class="zm-list-avatar avatar">
+</a>
+
+<a class="author-link" data-tip="p$t$tian-ya-wen-60-59" target="_blank" href="/people/tian-ya-wen-60-59">田雅文</a><span title="天天做外包的前端" class="bio">，天天做外包的前端</span>
+</div>
+<div class="zm-item-vote-info " data-votecount="14">
+
+<span class="voters text">
+<span class="user-block"><a data-tip="p$t$wangmiemie" href="https://www.zhihu.com/people/wangmiemie" target="_blank" class="zg-link" title="王咩咩">王咩咩</a>、</span><span class="user-block"><a data-tip="p$t$qin-bing-63" href="https://www.zhihu.com/people/qin-bing-63" target="_blank" class="zg-link" title="秦兵">秦兵</a>、</span><span class="user-block"><a data-tip="p$t$ye-kui-hua" href="https://www.zhihu.com/people/ye-kui-hua" target="_blank" class="zg-link" title="野葵花">野葵花</a></span>
+</span>
+
+
+<a href="javascript:;" class="more text"> 等人赞同</a>
+
+
+
+
+</div>
+</div>
+<div class="zm-item-rich-text js-collapse-body" data-resourceid="3167780" data-action="/answer/content" data-author-name="田雅文" data-entry-url="/question/27462267/answer/36730839">
+
+
+<div class="zh-summary summary clearfix" style="display:none;">
+
+写了一个bash自动创建git aliases，省的在terminal里一个一个打了，嗯懒癌晚期必备<a href="//link.zhihu.com/?target=https%3A//github.com/Franktian/GitAliasAuto" class=" wrap external" target="_blank" rel="nofollow noreferrer">Franktian/GitAliasAuto · GitHub<i class="icon-external"></i></a>------------------------------------2015-01-30更新-------------------自问自答，抛砖引玉用git alias设置short cut可以大大提高每次输…
+
+<a href="/question/27462267/answer/36730839" class="toggle-expand">显示全部</a>
+
+</div>
+
+
+<div class="zm-editable-content clearfix">
+写了一个bash自动创建git aliases，省的在terminal里一个一个打了，嗯懒癌晚期必备<br><a href="//link.zhihu.com/?target=https%3A//github.com/Franktian/GitAliasAuto" class=" wrap external" target="_blank" rel="nofollow noreferrer">Franktian/GitAliasAuto · GitHub<i class="icon-external"></i></a><br>------------------------------------2015-01-30更新-------------------<br>自问自答，抛砖引玉<br><br>用git alias设置short cut可以大大提高每次输入命令的效率。<br><br>举个栗子：<br>在GIt控制台里输入<br><div class="highlight"><pre><code class="language-text">git config --global alias.co checkout
+</code></pre></div>以后每次输入git co就相当于git checkout了<br><br>下面是一些自己常用的<br><div class="highlight"><pre><code class="language-text">st = status
+ci = commit
+br = branch
+co = checkout
+df = diff
+po = push origin
+pl = pull origin
+pu = pull upstream
+</code></pre></div>官方文档<br><a href="//link.zhihu.com/?target=http%3A//githowto.com/aliases" class=" wrap external" target="_blank" rel="nofollow noreferrer">11. Aliases | Git How To<i class="icon-external"></i></a><br><br><br>对于已经在版本控制之下的文件，修改后一般需要以下两步操作提交代码<br><div class="highlight"><pre><code class="language-text">git add &lt;file&gt;
+</code></pre></div>和<br><div class="highlight"><pre><code class="language-text">git commit -m "&lt;commit message&gt;"
+</code></pre></div><br>这两步可以简化成<br><div class="highlight"><pre><code class="language-text">git commit -am "commit message"
+</code></pre></div>一行命令进行stage和commit两步操作，-a 代表目标为所有修改过的文件（注意不包括untracked files）<br><br>这个方法对于有很多修改过的文件并不推荐，原因在于Commit message原则要做到尽量细致阐述当前修改的代码的意义，太多文件可能包含多个不同的目的，所以大家要尽量勤快的commit
+
+</div>
+
+</div>
+<a class="zg-anchor-hidden ac" name="10082741-comment"></a>
+<div class="zm-item-meta zm-item-comment-el answer-actions clearfix">
+<div class="zm-meta-panel">
+
+<span class="answer-date-link-wrap">
+<a class="answer-date-link last_updated meta-item" data-tip="s$t$发布于 2015-01-08" target="_blank" href="/question/27462267/answer/36730839">编辑于 2015-01-31</a>
+</span>
+
+<a href="#" name="addcomment" class=" meta-item toggle-comment">
+<i class="z-icon-comment"></i>3 条评论</a>
+
+
+<a href="#" class="meta-item zu-autohide" name="thanks" data-thanked="false"><i class="z-icon-thank"></i>感谢</a>
+
+
+
+<a href="#" class="meta-item zu-autohide" name="share">
+<i class="z-icon-share"></i>分享</a>
+<a href="#" class="meta-item zu-autohide" name="favo">
+<i class="z-icon-collect"></i>收藏</a>
+
+
+
+
+<span class="zg-bull zu-autohide">&bull;</span>
+
+<a href="#" name="nohelp" class="meta-item zu-autohide">没有帮助</a>
+
+<span class="zg-bull zu-autohide">&bull;</span>
+<a href="#" name="report" class="meta-item zu-autohide">举报</a>
+
+
+
+<span class="zg-bull">&bull;</span>
+
+<a href="/terms#sec-licence-1" target="_blank" class="meta-item copyright"> 作者保留权利 </a>
+
+
+
+</div>
+</div>
+</div>
+
+<div tabindex="-1" class="zm-item-answer  zm-item-expanded"
+
+itemscope itemtype="http://schema.org/Answer"
+data-aid="24101591"
+data-atoken="71700557"
+data-collapsed="0"
+data-created="1447204587"
+data-deleted="0"
+data-helpful="1"
+data-isowner="0"
+data-copyable="1"
+
+
+>
+<a class="zg-anchor-hidden" name="answer-24101591"></a>
+
+
+<div class="zm-votebar">
+<button class="up ">
+<i class="icon vote-arrow"></i>
+<span class="count">8</span>
+<span class="label sr-only">赞同</span>
+</button>
+<button class="down ">
+<i class="icon vote-arrow"></i>
+<span class="label sr-only">反对</span>
+</button>
+</div>
+
+
+<div class="answer-head">
+<div class="zm-item-answer-author-info">
+
+<a class="zm-item-link-avatar avatar-link" href="/people/liuyong25" target="_blank" data-tip="p$t$liuyong25">
+<img src="https://pic2.zhimg.com/fb7dabf89_s.jpg" class="zm-list-avatar avatar">
+</a>
+
+<a class="author-link" data-tip="p$t$liuyong25" target="_blank" href="/people/liuyong25">天猪(刘勇)</a><span title="技术控、前端+NodeJS、80后奶爸" class="bio">，技术控、前端+NodeJS、80后奶爸</span>
+</div>
+<div class="zm-item-vote-info " data-votecount="8">
+
+<span class="voters text">
+<span class="user-block"><a data-tip="p$t$leo-meng" href="https://www.zhihu.com/people/leo-meng" target="_blank" class="zg-link" title="Leo Meng">Leo Meng</a>、</span><span class="user-block"><a data-tip="p$t$xuanskyer" href="https://www.zhihu.com/people/xuanskyer" target="_blank" class="zg-link" title="世界不可能那么远">世界不可能那么远</a>、</span><span class="user-block"><a data-tip="p$t$shadowassassin" href="https://www.zhihu.com/people/shadowassassin" target="_blank" class="zg-link" title="ShadowAssassin">ShadowAssassin</a></span>
+</span>
+
+
+<a href="javascript:;" class="more text"> 等人赞同</a>
+
+
+
+
+</div>
+</div>
+<div class="zm-item-rich-text js-collapse-body" data-resourceid="3167780" data-action="/answer/content" data-author-name="天猪(刘勇)" data-entry-url="/question/27462267/answer/71700557">
+
+
+<div class="zh-summary summary clearfix" style="display:none;">
+
+git blame，缉凶利器
+
+</div>
+
+
+<div class="zm-editable-content clearfix">
+git blame，缉凶利器
+
+</div>
+
+</div>
+<a class="zg-anchor-hidden ac" name="24101591-comment"></a>
+<div class="zm-item-meta zm-item-comment-el answer-actions clearfix">
+<div class="zm-meta-panel">
+
+<span class="answer-date-link-wrap">
+<a class="answer-date-link last_updated meta-item" data-tip="s$t$发布于 2015-11-11" target="_blank" href="/question/27462267/answer/71700557">编辑于 2015-11-11</a>
+</span>
+
+<a href="#" name="addcomment" class=" meta-item toggle-comment">
+<i class="z-icon-comment"></i>1 条评论</a>
+
+
+<a href="#" class="meta-item zu-autohide" name="thanks" data-thanked="false"><i class="z-icon-thank"></i>感谢</a>
+
+
+
+<a href="#" class="meta-item zu-autohide" name="share">
+<i class="z-icon-share"></i>分享</a>
+<a href="#" class="meta-item zu-autohide" name="favo">
+<i class="z-icon-collect"></i>收藏</a>
+
+
+
+
+<span class="zg-bull zu-autohide">&bull;</span>
+
+<a href="#" name="nohelp" class="meta-item zu-autohide">没有帮助</a>
+
+<span class="zg-bull zu-autohide">&bull;</span>
+<a href="#" name="report" class="meta-item zu-autohide">举报</a>
+
+
+
+<span class="zg-bull">&bull;</span>
+
+<a href="/terms#sec-licence-1" target="_blank" class="meta-item copyright"> 作者保留权利 </a>
+
+
+
+</div>
+</div>
+</div>
+
+<div tabindex="-1" class="zm-item-answer  zm-item-expanded"
+
+itemscope itemtype="http://schema.org/Answer"
+data-aid="10523124"
+data-atoken="37829543"
+data-collapsed="0"
+data-created="1421926912"
+data-deleted="0"
+data-helpful="1"
+data-isowner="0"
+data-copyable="1"
+
+
+>
+<a class="zg-anchor-hidden" name="answer-10523124"></a>
+
+
+<div class="zm-votebar">
+<button class="up ">
+<i class="icon vote-arrow"></i>
+<span class="count">3</span>
+<span class="label sr-only">赞同</span>
+</button>
+<button class="down ">
+<i class="icon vote-arrow"></i>
+<span class="label sr-only">反对</span>
+</button>
+</div>
+
+
+<div class="answer-head">
+<div class="zm-item-answer-author-info">
+
+<a class="zm-item-link-avatar avatar-link" href="/people/gu-ban-dian" target="_blank" data-tip="p$t$gu-ban-dian">
+<img src="https://pic1.zhimg.com/7f0612630_s.jpg" class="zm-list-avatar avatar">
+</a>
+
+<a class="author-link" data-tip="p$t$gu-ban-dian" target="_blank" href="/people/gu-ban-dian">顾半巅</a><span title="var obj = {}; vimer;" class="bio">，var obj = {}; vimer;</span>
+</div>
+<div class="zm-item-vote-info " data-votecount="3">
+
+<span class="voters text">
+<span class="user-block"><a data-tip="p$t$jasinyip" href="https://www.zhihu.com/people/jasinyip" target="_blank" class="zg-link" title="Jasin Yip">Jasin Yip</a>、</span><span class="user-block"><a data-tip="p$t$bakujun" href="https://www.zhihu.com/people/bakujun" target="_blank" class="zg-link" title="Baku菌">Baku菌</a>、</span><span class="user-block"><a data-tip="p$t$tian-ya-wen-60-59" href="https://www.zhihu.com/people/tian-ya-wen-60-59" target="_blank" class="zg-link" title="田雅文">田雅文</a></span>
+</span>
+
+
+<span class="text">赞同</span>
+
+
+
+
+</div>
+</div>
+<div class="zm-item-rich-text js-collapse-body" data-resourceid="3167780" data-action="/answer/content" data-author-name="顾半巅" data-entry-url="/question/27462267/answer/37829543">
+
+
+<div class="zh-summary summary clearfix" style="display:none;">
+
+git rebase -i 修改提交记录git stash 当前分支放到缓存栈, 炒鸡好用的两个技能.
+
+</div>
+
+
+<div class="zm-editable-content clearfix">
+git rebase -i 修改提交记录<br>git stash 当前分支放到缓存栈,  <br>炒鸡好用的两个技能.
+
+</div>
+
+</div>
+<a class="zg-anchor-hidden ac" name="10523124-comment"></a>
+<div class="zm-item-meta zm-item-comment-el answer-actions clearfix">
+<div class="zm-meta-panel">
+
+<span class="answer-date-link-wrap">
+<a class="answer-date-link meta-item" target="_blank" href="/question/27462267/answer/37829543">发布于 2015-01-22</a>
+</span>
+
+<a href="#" name="addcomment" class=" meta-item toggle-comment">
+<i class="z-icon-comment"></i>添加评论</a>
+
+
+<a href="#" class="meta-item zu-autohide" name="thanks" data-thanked="false"><i class="z-icon-thank"></i>感谢</a>
+
+
+
+<a href="#" class="meta-item zu-autohide" name="share">
+<i class="z-icon-share"></i>分享</a>
+<a href="#" class="meta-item zu-autohide" name="favo">
+<i class="z-icon-collect"></i>收藏</a>
+
+
+
+
+<span class="zg-bull zu-autohide">&bull;</span>
+
+<a href="#" name="nohelp" class="meta-item zu-autohide">没有帮助</a>
+
+<span class="zg-bull zu-autohide">&bull;</span>
+<a href="#" name="report" class="meta-item zu-autohide">举报</a>
+
+
+
+<span class="zg-bull">&bull;</span>
+
+<a href="/terms#sec-licence-1" target="_blank" class="meta-item copyright"> 作者保留权利 </a>
+
+
+
+</div>
+</div>
+</div>
+
+<div tabindex="-1" class="zm-item-answer  zm-item-expanded"
+
+itemscope itemtype="http://schema.org/Answer"
+data-aid="24669798"
+data-atoken="73118034"
+data-collapsed="0"
+data-created="1448001736"
+data-deleted="0"
+data-helpful="1"
+data-isowner="0"
+data-copyable="1"
+
+
+>
+<a class="zg-anchor-hidden" name="answer-24669798"></a>
+
+
+<div class="zm-votebar">
+<button class="up ">
+<i class="icon vote-arrow"></i>
+<span class="count">0</span>
+<span class="label sr-only">赞同</span>
+</button>
+<button class="down ">
+<i class="icon vote-arrow"></i>
+<span class="label sr-only">反对</span>
+</button>
+</div>
+
+
+<div class="answer-head">
+<div class="zm-item-answer-author-info">
+
+<a class="zm-item-link-avatar avatar-link" href="/people/elpie-kay" target="_blank" data-tip="p$t$elpie-kay">
+<img src="https://pic2.zhimg.com/3bca559c3ca7ae6ca2ebd7471a269321_s.jpg" class="zm-list-avatar avatar">
+</a>
+
+<a class="author-link" data-tip="p$t$elpie-kay" target="_blank" href="/people/elpie-kay">Elpie Kay</a><span title="scm菜鸟" class="bio">，scm菜鸟</span>
+</div>
+<div class="zm-item-vote-info empty" data-votecount="0">
+
+
+
+
+
+</div>
+</div>
+<div class="zm-item-rich-text js-collapse-body" data-resourceid="3167780" data-action="/answer/content" data-author-name="Elpie Kay" data-entry-url="/question/27462267/answer/73118034">
+
+
+<div class="zh-summary summary clearfix" style="display:none;">
+
+在文件路径参数前加上--空格，可以避免歧义
+
+</div>
+
+
+<div class="zm-editable-content clearfix">
+在文件路径参数前加上--空格，可以避免歧义
+
+</div>
+
+</div>
+<a class="zg-anchor-hidden ac" name="24669798-comment"></a>
+<div class="zm-item-meta zm-item-comment-el answer-actions clearfix">
+<div class="zm-meta-panel">
+
+<span class="answer-date-link-wrap">
+<a class="answer-date-link meta-item" target="_blank" href="/question/27462267/answer/73118034">发布于 2015-11-20</a>
+</span>
+
+<a href="#" name="addcomment" class=" meta-item toggle-comment">
+<i class="z-icon-comment"></i>1 条评论</a>
+
+
+<a href="#" class="meta-item zu-autohide" name="thanks" data-thanked="false"><i class="z-icon-thank"></i>感谢</a>
+
+
+
+<a href="#" class="meta-item zu-autohide" name="share">
+<i class="z-icon-share"></i>分享</a>
+<a href="#" class="meta-item zu-autohide" name="favo">
+<i class="z-icon-collect"></i>收藏</a>
+
+
+
+
+<span class="zg-bull zu-autohide">&bull;</span>
+
+<a href="#" name="nohelp" class="meta-item zu-autohide">没有帮助</a>
+
+<span class="zg-bull zu-autohide">&bull;</span>
+<a href="#" name="report" class="meta-item zu-autohide">举报</a>
+
+
+
+<span class="zg-bull">&bull;</span>
+
+<a href="/terms#sec-licence-1" target="_blank" class="meta-item copyright"> 作者保留权利 </a>
+
+
+
+</div>
+</div>
+</div>
+
+<div tabindex="-1" class="zm-item-answer  zm-item-expanded"
+
+itemscope itemtype="http://schema.org/Answer"
+data-aid="10441539"
+data-atoken="37626477"
+data-collapsed="0"
+data-created="1421728822"
+data-deleted="0"
+data-helpful="1"
+data-isowner="0"
+data-copyable="1"
+
+
+>
+<a class="zg-anchor-hidden" name="answer-10441539"></a>
+
+
+<div class="zm-votebar">
+<button class="up ">
+<i class="icon vote-arrow"></i>
+<span class="count">0</span>
+<span class="label sr-only">赞同</span>
+</button>
+<button class="down ">
+<i class="icon vote-arrow"></i>
+<span class="label sr-only">反对</span>
+</button>
+</div>
+
+
+<div class="answer-head">
+<div class="zm-item-answer-author-info">
+<span class="name">匿名用户</span>
+</div>
+<div class="zm-item-vote-info empty" data-votecount="0">
+
+
+
+
+
+</div>
+</div>
+<div class="zm-item-rich-text js-collapse-body" data-resourceid="3167780" data-action="/answer/content" data-author-name="匿名用户" data-entry-url="/question/27462267/answer/37626477">
+
+
+<div class="zh-summary summary clearfix" style="display:none;">
+
+我经常做的事情：git stash -p
+# 然后开始修改文件，pull，merge，调戏妹子……
+# 然后：
+git stash pop
+
+</div>
+
+
+<div class="zm-editable-content clearfix">
+我经常做的事情：<br><div class="highlight"><pre><code class="language-text">git stash -p
+# 然后开始修改文件，pull，merge，调戏妹子……
+# 然后：
+git stash pop
+</code></pre></div>
+
+</div>
+
+</div>
+<a class="zg-anchor-hidden ac" name="10441539-comment"></a>
+<div class="zm-item-meta zm-item-comment-el answer-actions clearfix">
+<div class="zm-meta-panel">
+
+<span class="answer-date-link-wrap">
+<a class="answer-date-link last_updated meta-item" data-tip="s$t$发布于 2015-01-20" target="_blank" href="/question/27462267/answer/37626477">编辑于 2015-01-20</a>
+</span>
+
+<a href="#" name="addcomment" class=" meta-item toggle-comment">
+<i class="z-icon-comment"></i>1 条评论</a>
+
+
+<a href="#" class="meta-item zu-autohide" name="thanks" data-thanked="false"><i class="z-icon-thank"></i>感谢</a>
+
+
+
+<a href="#" class="meta-item zu-autohide" name="share">
+<i class="z-icon-share"></i>分享</a>
+<a href="#" class="meta-item zu-autohide" name="favo">
+<i class="z-icon-collect"></i>收藏</a>
+
+
+
+
+<span class="zg-bull zu-autohide">&bull;</span>
+
+<a href="#" name="nohelp" class="meta-item zu-autohide">没有帮助</a>
+
+<span class="zg-bull zu-autohide">&bull;</span>
+<a href="#" name="report" class="meta-item zu-autohide">举报</a>
+
+
+
+<span class="zg-bull">&bull;</span>
+
+<a href="/terms#sec-licence-1" target="_blank" class="meta-item copyright"> 作者保留权利 </a>
+
+
+
+</div>
+</div>
+</div>
+
+<div tabindex="-1" class="zm-item-answer  zm-item-expanded"
+
+itemscope itemtype="http://schema.org/Answer"
+data-aid="10452131"
+data-atoken="37652482"
+data-collapsed="0"
+data-created="1421749179"
+data-deleted="0"
+data-helpful="1"
+data-isowner="0"
+data-copyable="1"
+
+
+>
+<a class="zg-anchor-hidden" name="answer-10452131"></a>
+
+
+<div class="zm-votebar">
+<button class="up ">
+<i class="icon vote-arrow"></i>
+<span class="count">1</span>
+<span class="label sr-only">赞同</span>
+</button>
+<button class="down ">
+<i class="icon vote-arrow"></i>
+<span class="label sr-only">反对</span>
+</button>
+</div>
+
+
+<div class="answer-head">
+<div class="zm-item-answer-author-info">
+
+<a class="zm-item-link-avatar avatar-link" href="/people/latiao" target="_blank" data-tip="p$t$latiao">
+<img src="https://pic4.zhimg.com/2bc6d536b_s.jpg" class="zm-list-avatar avatar">
+</a>
+
+<a class="author-link" data-tip="p$t$latiao" target="_blank" href="/people/latiao">辣条</a><span title="微信公众号，jinlinxi2013" class="bio">，微信公众号，jinlinxi2013</span>
+</div>
+<div class="zm-item-vote-info " data-votecount="1">
+
+<span class="voters text">
+<span class="user-block"><a data-tip="p$t$ye-kui-hua" href="https://www.zhihu.com/people/ye-kui-hua" target="_blank" class="zg-link" title="野葵花">野葵花</a></span>
+</span>
+
+
+<span class="text">赞同</span>
+
+
+
+
+</div>
+</div>
+<div class="zm-item-rich-text js-collapse-body" data-resourceid="3167780" data-action="/answer/content" data-author-name="辣条" data-entry-url="/question/27462267/answer/37652482">
+
+
+<div class="zh-summary summary clearfix" style="display:none;">
+
+<a href="//link.zhihu.com/?target=https%3A//github.com/tiimgreen/github-cheat-sheet" class=" external" target="_blank" rel="nofollow noreferrer"><span class="invisible">https://</span><span class="visible">github.com/tiimgreen/gi</span><span class="invisible">thub-cheat-sheet</span><span class="ellipsis"></span><i class="icon-external"></i></a>
+
+</div>
+
+
+<div class="zm-editable-content clearfix">
+<a href="//link.zhihu.com/?target=https%3A//github.com/tiimgreen/github-cheat-sheet" class=" external" target="_blank" rel="nofollow noreferrer"><span class="invisible">https://</span><span class="visible">github.com/tiimgreen/gi</span><span class="invisible">thub-cheat-sheet</span><span class="ellipsis"></span><i class="icon-external"></i></a>
+
+</div>
+
+</div>
+<a class="zg-anchor-hidden ac" name="10452131-comment"></a>
+<div class="zm-item-meta zm-item-comment-el answer-actions clearfix">
+<div class="zm-meta-panel">
+
+<span class="answer-date-link-wrap">
+<a class="answer-date-link meta-item" target="_blank" href="/question/27462267/answer/37652482">发布于 2015-01-20</a>
+</span>
+
+<a href="#" name="addcomment" class=" meta-item toggle-comment">
+<i class="z-icon-comment"></i>添加评论</a>
+
+
+<a href="#" class="meta-item zu-autohide" name="thanks" data-thanked="false"><i class="z-icon-thank"></i>感谢</a>
+
+
+
+<a href="#" class="meta-item zu-autohide" name="share">
+<i class="z-icon-share"></i>分享</a>
+<a href="#" class="meta-item zu-autohide" name="favo">
+<i class="z-icon-collect"></i>收藏</a>
+
+
+
+
+<span class="zg-bull zu-autohide">&bull;</span>
+
+<a href="#" name="nohelp" class="meta-item zu-autohide">没有帮助</a>
+
+<span class="zg-bull zu-autohide">&bull;</span>
+<a href="#" name="report" class="meta-item zu-autohide">举报</a>
+
+
+
+<span class="zg-bull">&bull;</span>
+
+<a href="/terms#sec-licence-1" target="_blank" class="meta-item copyright"> 作者保留权利 </a>
+
+
+
+</div>
+</div>
+</div>
+
+<div tabindex="-1" class="zm-item-answer  zm-item-expanded"
+
+itemscope itemtype="http://schema.org/Answer"
+data-aid="25055363"
+data-atoken="74080202"
+data-collapsed="0"
+data-created="1448539603"
+data-deleted="0"
+data-helpful="1"
+data-isowner="0"
+data-copyable="1"
+
+
+>
+<a class="zg-anchor-hidden" name="answer-25055363"></a>
+
+
+<div class="zm-votebar">
+<button class="up ">
+<i class="icon vote-arrow"></i>
+<span class="count">0</span>
+<span class="label sr-only">赞同</span>
+</button>
+<button class="down ">
+<i class="icon vote-arrow"></i>
+<span class="label sr-only">反对</span>
+</button>
+</div>
+
+
+<div class="answer-head">
+<div class="zm-item-answer-author-info">
+
+<a class="zm-item-link-avatar avatar-link" href="/people/guqiangqiang" target="_blank" data-tip="p$t$guqiangqiang">
+<img src="https://pic4.zhimg.com/6e46a4da40109f151cb764cbd27767ab_s.jpg" class="zm-list-avatar avatar">
+</a>
+
+<a class="author-link" data-tip="p$t$guqiangqiang" target="_blank" href="/people/guqiangqiang">Hugo Gu</a><span title="程序员" class="bio">，程序员</span>
+</div>
+<div class="zm-item-vote-info empty" data-votecount="0">
+
+
+
+
+
+</div>
+</div>
+<div class="zm-item-rich-text js-collapse-body" data-resourceid="3167780" data-action="/answer/content" data-author-name="Hugo Gu" data-entry-url="/question/27462267/answer/74080202">
+
+
+<div class="zh-summary summary clearfix" style="display:none;">
+
+git help
+
+</div>
+
+
+<div class="zm-editable-content clearfix">
+git help
+
+</div>
+
+</div>
+<a class="zg-anchor-hidden ac" name="25055363-comment"></a>
+<div class="zm-item-meta zm-item-comment-el answer-actions clearfix">
+<div class="zm-meta-panel">
+
+<span class="answer-date-link-wrap">
+<a class="answer-date-link meta-item" target="_blank" href="/question/27462267/answer/74080202">发布于 2015-11-26</a>
+</span>
+
+<a href="#" name="addcomment" class=" meta-item toggle-comment">
+<i class="z-icon-comment"></i>添加评论</a>
+
+
+<a href="#" class="meta-item zu-autohide" name="thanks" data-thanked="false"><i class="z-icon-thank"></i>感谢</a>
+
+
+
+<a href="#" class="meta-item zu-autohide" name="share">
+<i class="z-icon-share"></i>分享</a>
+<a href="#" class="meta-item zu-autohide" name="favo">
+<i class="z-icon-collect"></i>收藏</a>
+
+
+
+
+<span class="zg-bull zu-autohide">&bull;</span>
+
+<a href="#" name="nohelp" class="meta-item zu-autohide">没有帮助</a>
+
+<span class="zg-bull zu-autohide">&bull;</span>
+<a href="#" name="report" class="meta-item zu-autohide">举报</a>
+
+
+
+<span class="zg-bull">&bull;</span>
+
+<a href="/terms#sec-licence-1" target="_blank" class="meta-item copyright"> 作者保留权利 </a>
+
+
+
+</div>
+</div>
+</div>
+
+<div tabindex="-1" class="zm-item-answer  zm-item-expanded"
+
+itemscope itemtype="http://schema.org/Answer"
+data-aid="10097570"
+data-atoken="36767771"
+data-collapsed="0"
+data-created="1420702763"
+data-deleted="0"
+data-helpful="1"
+data-isowner="0"
+data-copyable="1"
+
+
+>
+<a class="zg-anchor-hidden" name="answer-10097570"></a>
+
+
+<div class="zm-votebar">
+<button class="up ">
+<i class="icon vote-arrow"></i>
+<span class="count">6</span>
+<span class="label sr-only">赞同</span>
+</button>
+<button class="down ">
+<i class="icon vote-arrow"></i>
+<span class="label sr-only">反对</span>
+</button>
+</div>
+
+
+<div class="answer-head">
+<div class="zm-item-answer-author-info">
+<span class="name">匿名用户</span>
+</div>
+<div class="zm-item-vote-info " data-votecount="6">
+
+<span class="voters text">
+<span class="user-block"><a data-tip="p$t$frankfun" href="https://www.zhihu.com/people/frankfun" target="_blank" class="zg-link" title="峰峰">峰峰</a>、</span><span class="user-block"><a data-tip="p$t$domon42" href="https://www.zhihu.com/people/domon42" target="_blank" class="zg-link" title="Domon R">Domon R</a>、</span><span class="user-block"><a data-tip="p$t$tongchiang" href="https://www.zhihu.com/people/tongchiang" target="_blank" class="zg-link" title="Tony Chiang">Tony Chiang</a></span>
+</span>
+
+
+<a href="javascript:;" class="more text"> 等人赞同</a>
+
+
+
+
+</div>
+</div>
+<div class="zm-item-rich-text js-collapse-body" data-resourceid="3167780" data-action="/answer/content" data-author-name="匿名用户" data-entry-url="/question/27462267/answer/36767771">
+
+
+<div class="zh-summary summary clearfix" style="display:none;">
+
+Git 就别其奇淫技巧了，本来就能玩死一批人，就别教人学坏了。
+
+</div>
+
+
+<div class="zm-editable-content clearfix">
+Git 就别其奇淫技巧了，本来就能玩死一批人，就别教人学坏了。
+
+</div>
+
+</div>
+<a class="zg-anchor-hidden ac" name="10097570-comment"></a>
+<div class="zm-item-meta zm-item-comment-el answer-actions clearfix">
+<div class="zm-meta-panel">
+
+<span class="answer-date-link-wrap">
+<a class="answer-date-link meta-item" target="_blank" href="/question/27462267/answer/36767771">发布于 2015-01-08</a>
+</span>
+
+<a href="#" name="addcomment" class=" meta-item toggle-comment">
+<i class="z-icon-comment"></i>1 条评论</a>
+
+
+<a href="#" class="meta-item zu-autohide" name="thanks" data-thanked="false"><i class="z-icon-thank"></i>感谢</a>
+
+
+
+<a href="#" class="meta-item zu-autohide" name="share">
+<i class="z-icon-share"></i>分享</a>
+<a href="#" class="meta-item zu-autohide" name="favo">
+<i class="z-icon-collect"></i>收藏</a>
+
+
+
+
+<span class="zg-bull zu-autohide">&bull;</span>
+
+<a href="#" name="nohelp" class="meta-item zu-autohide">没有帮助</a>
+
+<span class="zg-bull zu-autohide">&bull;</span>
+<a href="#" name="report" class="meta-item zu-autohide">举报</a>
+
+
+
+<span class="zg-bull">&bull;</span>
+
+<a href="/terms#sec-licence-1" target="_blank" class="meta-item copyright"> 作者保留权利 </a>
+
+
+
+</div>
+</div>
+</div>
+
+<div tabindex="-1" class="zm-item-answer  zm-item-expanded"
+
+itemscope itemtype="http://schema.org/Answer"
+data-aid="24140277"
+data-atoken="71797458"
+data-collapsed="0"
+data-created="1447250477"
+data-deleted="0"
+data-helpful="1"
+data-isowner="0"
+data-copyable="1"
+
+
+>
+<a class="zg-anchor-hidden" name="answer-24140277"></a>
+
+
+<div class="zm-votebar">
+<button class="up ">
+<i class="icon vote-arrow"></i>
+<span class="count">3</span>
+<span class="label sr-only">赞同</span>
+</button>
+<button class="down ">
+<i class="icon vote-arrow"></i>
+<span class="label sr-only">反对</span>
+</button>
+</div>
+
+
+<div class="answer-head">
+<div class="zm-item-answer-author-info">
+
+<a class="zm-item-link-avatar avatar-link" href="/people/po-mo-91" target="_blank" data-tip="p$t$po-mo-91">
+<img src="https://pic2.zhimg.com/32b79b839_s.jpg" class="zm-list-avatar avatar">
+</a>
+
+<a class="author-link" data-tip="p$t$po-mo-91" target="_blank" href="/people/po-mo-91">泼墨</a><span title="undefined" class="bio">，undefined</span>
+</div>
+<div class="zm-item-vote-info " data-votecount="3">
+
+<span class="voters text">
+<span class="user-block"><a data-tip="p$t$baiyangtx" href="https://www.zhihu.com/people/baiyangtx" target="_blank" class="zg-link" title="机器人">机器人</a>、</span><span class="user-block"><a data-tip="p$t$xiao-sheng-jing" href="https://www.zhihu.com/people/xiao-sheng-jing" target="_blank" class="zg-link" title="小生境">小生境</a>、</span><span class="user-block"><a data-tip="p$t$zhong-you-51" href="https://www.zhihu.com/people/zhong-you-51" target="_blank" class="zg-link" title="钟佑">钟佑</a></span>
+</span>
+
+
+<span class="text">赞同</span>
+
+
+
+
+</div>
+</div>
+<div class="zm-item-rich-text js-collapse-body" data-resourceid="3167780" data-action="/answer/content" data-author-name="泼墨" data-entry-url="/question/27462267/answer/71797458">
+
+
+<div class="zh-summary summary clearfix" style="display:none;">
+
+用branch管（yin）理（cang）FBI Warning
+
+</div>
+
+
+<div class="zm-editable-content clearfix">
+用branch管（yin）理（cang）FBI Warning
+
+</div>
+
+</div>
+<a class="zg-anchor-hidden ac" name="24140277-comment"></a>
+<div class="zm-item-meta zm-item-comment-el answer-actions clearfix">
+<div class="zm-meta-panel">
+
+<span class="answer-date-link-wrap">
+<a class="answer-date-link last_updated meta-item" data-tip="s$t$发布于 2015-11-11" target="_blank" href="/question/27462267/answer/71797458">编辑于 2015-11-21</a>
+</span>
+
+<a href="#" name="addcomment" class=" meta-item toggle-comment">
+<i class="z-icon-comment"></i>1 条评论</a>
+
+
+<a href="#" class="meta-item zu-autohide" name="thanks" data-thanked="false"><i class="z-icon-thank"></i>感谢</a>
+
+
+
+<a href="#" class="meta-item zu-autohide" name="share">
+<i class="z-icon-share"></i>分享</a>
+<a href="#" class="meta-item zu-autohide" name="favo">
+<i class="z-icon-collect"></i>收藏</a>
+
+
+
+
+<span class="zg-bull zu-autohide">&bull;</span>
+
+<a href="#" name="nohelp" class="meta-item zu-autohide">没有帮助</a>
+
+<span class="zg-bull zu-autohide">&bull;</span>
+<a href="#" name="report" class="meta-item zu-autohide">举报</a>
+
+
+
+<span class="zg-bull">&bull;</span>
+
+<a href="/terms#sec-licence-1" target="_blank" class="meta-item copyright"> 作者保留权利 </a>
+
+
+
+</div>
+</div>
+</div>
+
+<div tabindex="-1" class="zm-item-answer  zm-item-expanded"
+
+itemscope itemtype="http://schema.org/Answer"
+data-aid="24717486"
+data-atoken="73236998"
+data-collapsed="0"
+data-created="1448077375"
+data-deleted="0"
+data-helpful="1"
+data-isowner="0"
+data-copyable="1"
+
+
+>
+<a class="zg-anchor-hidden" name="answer-24717486"></a>
+
+
+<div class="zm-votebar">
+<button class="up ">
+<i class="icon vote-arrow"></i>
+<span class="count">3</span>
+<span class="label sr-only">赞同</span>
+</button>
+<button class="down ">
+<i class="icon vote-arrow"></i>
+<span class="label sr-only">反对</span>
+</button>
+</div>
+
+
+<div class="answer-head">
+<div class="zm-item-answer-author-info">
+
+<a class="zm-item-link-avatar avatar-link" href="/people/damonzhao" target="_blank" data-tip="p$t$damonzhao">
+<img src="https://pic3.zhimg.com/2e7d910e4ad37971a298b277387786fa_s.jpg" class="zm-list-avatar avatar">
+</a>
+
+<a class="author-link" data-tip="p$t$damonzhao" target="_blank" href="/people/damonzhao">赵飞</a><span title="互联网/前端/设计/摄影" class="bio">，互联网/前端/设计/摄影</span>
+</div>
+<div class="zm-item-vote-info " data-votecount="3">
+
+<span class="voters text">
+<span class="user-block"><a data-tip="p$t$feng-kuang-luan-zhua" href="https://www.zhihu.com/people/feng-kuang-luan-zhua" target="_blank" class="zg-link" title="莫折彼岸">莫折彼岸</a>、</span><span class="user-block"><a data-tip="p$t$kongweibin" href="https://www.zhihu.com/people/kongweibin" target="_blank" class="zg-link" title="孔维斌">孔维斌</a>、</span><span class="user-block"><a data-tip="p$t$fredyj" href="https://www.zhihu.com/people/fredyj" target="_blank" class="zg-link" title="醉爱酸奶">醉爱酸奶</a></span>
+</span>
+
+
+<span class="text">赞同</span>
+
+
+
+
+</div>
+</div>
+<div class="zm-item-rich-text js-collapse-body" data-resourceid="3167780" data-action="/answer/content" data-author-name="赵飞" data-entry-url="/question/27462267/answer/73236998">
+
+
+<div class="zh-summary summary clearfix" style="display:none;">
+
+写几个我常用的。git commit -am 'blabla' 快速提交git checkout - 切换回上一次分支git fetch —prune 和远程分支同步git branch -r --merged | grep -v master | sed 's/origin\///‘ 这个可以将你merge到master的分支删除掉git rm --cached a.a 移除暂存…
+
+<a href="/question/27462267/answer/73236998" class="toggle-expand">显示全部</a>
+
+</div>
+
+
+<div class="zm-editable-content clearfix">
+写几个我常用的。<br><br>git commit -am 'blabla' 快速提交<br>git checkout - 切换回上一次分支<br>git fetch —prune 和远程分支同步<br>git branch -r --merged | grep -v master | sed 's/origin\///‘  这个可以将你merge到master的分支删除掉<br>git rm --cached a.a 移除暂存区的文件（在分类提交时挺管用的<br>git diff --cached 或 $ git diff --staged 查看尚未提交的更新<br><br><br>＋＋＋＋＋＋＋<br>另 付上一个速查表 大家共勉：<br>git status 查看当前状态 <br>
+git commit 提交 <br>
+git branch -a 查看所有的分支<br>
+git branch -r 查看远程所有分支<br>
+git commit -am "init" 提交并且加注释 <br>
+git remote add origin git@192.168.1.119:ndshow<br>
+git push origin master 将文件给推到服务器上 <br>
+git remote show origin 显示远程库origin里的资源 <br>
+git push origin master:develop<br>
+git push origin master:hb-dev 将本地库与服务器上的库进行关联 <br>
+git checkout --track origin/dev 切换到远程dev分支<br>
+git branch -D master develop 删除本地库develop<br>
+git checkout -b dev 建立一个新的本地分支dev<br>
+git merge origin/dev 将分支dev与当前分支进行合并<br>
+git checkout dev 切换到本地dev分支<br>
+git remote show 查看远程库<br>
+git add .<br>
+git rm 文件名(包括路径) 从git中删除指定文件<br>
+git clone git://<a href="//link.zhihu.com/?target=http%3A//github.com/schacon/grit.git" class=" external" target="_blank" rel="nofollow noreferrer"><span class="invisible">http://</span><span class="visible">github.com/schacon/grit</span><span class="invisible">.git</span><span class="ellipsis"></span><i class="icon-external"></i></a> 从服务器上将代码给拉下来<br>
+git config --list 看所有用户<br>
+git ls-files 看已经被提交的<br>
+git rm [file name] 删除一个文件<br>
+git commit -a 提交当前repos的所有的改变<br>
+git add [file name] 添加一个文件到git index<br>
+git commit -v 当你用－v参数的时候可以看commit的差异<br>
+git commit -m "This is the message describing the commit" 添加commit信息<br>
+git commit -a -a是代表add，把所有的change加到git index里然后再commit<br>
+git commit -a -v 一般提交命令<br>
+git log 看你commit的日志<br>
+git diff 查看尚未暂存的更新<br>
+git rm a.a 移除文件(从暂存区和工作区中删除)<br>
+git rm --cached a.a 移除文件(只从暂存区中删除)<br>
+git commit -m "remove" 移除文件(从Git中删除)<br>
+git rm -f a.a 强行移除修改后文件(从暂存区和工作区中删除)<br>
+git diff --cached 或 $ git diff --staged 查看尚未提交的更新<br>
+git stash push 将文件给push到一个临时空间中<br>
+git stash pop 将文件从临时空间pop下来<br>
+---------------------------------------------------------<br>
+git remote add origin git@github.com:username/Hello-World.git<br>
+git push origin master 将本地项目给提交到服务器中<br>
+-----------------------------------------------------------<br>
+git pull 本地与服务器端同步<br>
+-----------------------------------------------------------------<br>
+git push (远程仓库名) (分支名) 将本地分支推送到服务器上去。<br>
+git push origin serverfix:awesomebranch<br>
+------------------------------------------------------------------<br>
+git fetch 相当于是从远程获取最新版本到本地，不会自动merge<br>
+git commit -a -m "log_message" (-a是提交所有改动，-m是加入log信息) 本地修改同步至服务器端 ：<br>
+git branch branch_0.1 master 从主分支master创建branch_0.1分支<br>
+git branch -m branch_0.1 branch_1.0 将branch_0.1重命名为branch_1.0<br>
+git checkout branch_1.0/master 切换到branch_1.0/master分支<br>
+du -hs
+
+</div>
+
+</div>
+<a class="zg-anchor-hidden ac" name="24717486-comment"></a>
+<div class="zm-item-meta zm-item-comment-el answer-actions clearfix">
+<div class="zm-meta-panel">
+
+<span class="answer-date-link-wrap">
+<a class="answer-date-link meta-item" target="_blank" href="/question/27462267/answer/73236998">发布于 2015-11-21</a>
+</span>
+
+<a href="#" name="addcomment" class=" meta-item toggle-comment">
+<i class="z-icon-comment"></i>添加评论</a>
+
+
+<a href="#" class="meta-item zu-autohide" name="thanks" data-thanked="false"><i class="z-icon-thank"></i>感谢</a>
+
+
+
+<a href="#" class="meta-item zu-autohide" name="share">
+<i class="z-icon-share"></i>分享</a>
+<a href="#" class="meta-item zu-autohide" name="favo">
+<i class="z-icon-collect"></i>收藏</a>
+
+
+
+
+<span class="zg-bull zu-autohide">&bull;</span>
+
+<a href="#" name="nohelp" class="meta-item zu-autohide">没有帮助</a>
+
+<span class="zg-bull zu-autohide">&bull;</span>
+<a href="#" name="report" class="meta-item zu-autohide">举报</a>
+
+
+
+<span class="zg-bull">&bull;</span>
+
+<a href="/terms#sec-licence-1" target="_blank" class="meta-item copyright"> 作者保留权利 </a>
+
+
+
+</div>
+</div>
+</div>
+
+<div tabindex="-1" class="zm-item-answer  zm-item-expanded"
+
+itemscope itemtype="http://schema.org/Answer"
+data-aid="30380513"
+data-atoken="87366965"
+data-collapsed="0"
+data-created="1456037128"
+data-deleted="0"
+data-helpful="1"
+data-isowner="0"
+data-copyable="1"
+
+
+>
+<a class="zg-anchor-hidden" name="answer-30380513"></a>
+
+
+<div class="zm-votebar">
+<button class="up ">
+<i class="icon vote-arrow"></i>
+<span class="count">2</span>
+<span class="label sr-only">赞同</span>
+</button>
+<button class="down ">
+<i class="icon vote-arrow"></i>
+<span class="label sr-only">反对</span>
+</button>
+</div>
+
+
+<div class="answer-head">
+<div class="zm-item-answer-author-info">
+
+<a class="zm-item-link-avatar avatar-link" href="/people/superfashi-16" target="_blank" data-tip="p$t$superfashi-16">
+<img src="https://pic4.zhimg.com/03d687865e178a132b9c9a8896057c6f_s.jpg" class="zm-list-avatar avatar">
+</a>
+
+<a class="author-link" data-tip="p$t$superfashi-16" target="_blank" href="/people/superfashi-16">SuperFashi</a><span title="苦逼挖坑猿" class="bio">，苦逼挖坑猿</span>
+</div>
+<div class="zm-item-vote-info " data-votecount="2">
+
+<span class="voters text">
+<span class="user-block"><a data-tip="p$t$niucang" href="https://www.zhihu.com/people/niucang" target="_blank" class="zg-link" title="刘畅">刘畅</a>、</span><span class="user-block"><a data-tip="p$t$ze3kr" href="https://www.zhihu.com/people/ze3kr" target="_blank" class="zg-link" title="郭泽宇">郭泽宇</a></span>
+</span>
+
+
+<span class="text">赞同</span>
+
+
+
+
+</div>
+</div>
+<div class="zm-item-rich-text js-collapse-body" data-resourceid="3167780" data-action="/answer/content" data-author-name="SuperFashi" data-entry-url="/question/27462267/answer/87366965">
+
+
+<div class="zh-summary summary clearfix" style="display:none;">
+
+真实情况：卧槽这谁写的这么恶心？git reset HEAD~1git push -f(￣ー￣)
+
+</div>
+
+
+<div class="zm-editable-content clearfix">
+真实情况：<br>卧槽这谁写的这么恶心？<br>git reset HEAD~1<br>git push -f<br>(￣ー￣)
+
+</div>
+
+</div>
+<a class="zg-anchor-hidden ac" name="30380513-comment"></a>
+<div class="zm-item-meta zm-item-comment-el answer-actions clearfix">
+<div class="zm-meta-panel">
+
+<span class="answer-date-link-wrap">
+<a class="answer-date-link meta-item" target="_blank" href="/question/27462267/answer/87366965">发布于 2016-02-21</a>
+</span>
+
+<a href="#" name="addcomment" class=" meta-item toggle-comment">
+<i class="z-icon-comment"></i>添加评论</a>
+
+
+<a href="#" class="meta-item zu-autohide" name="thanks" data-thanked="false"><i class="z-icon-thank"></i>感谢</a>
+
+
+
+<a href="#" class="meta-item zu-autohide" name="share">
+<i class="z-icon-share"></i>分享</a>
+<a href="#" class="meta-item zu-autohide" name="favo">
+<i class="z-icon-collect"></i>收藏</a>
+
+
+
+
+<span class="zg-bull zu-autohide">&bull;</span>
+
+<a href="#" name="nohelp" class="meta-item zu-autohide">没有帮助</a>
+
+<span class="zg-bull zu-autohide">&bull;</span>
+<a href="#" name="report" class="meta-item zu-autohide">举报</a>
+
+
+
+<span class="zg-bull">&bull;</span>
+
+<a href="/terms#sec-licence-1" target="_blank" class="meta-item copyright"> 作者保留权利 </a>
+
+
+
+</div>
+</div>
+</div>
+
+<div tabindex="-1" class="zm-item-answer  zm-item-expanded"
+
+itemscope itemtype="http://schema.org/Answer"
+data-aid="29422932"
+data-atoken="84978285"
+data-collapsed="0"
+data-created="1454649488"
+data-deleted="0"
+data-helpful="1"
+data-isowner="0"
+data-copyable="1"
+
+
+>
+<a class="zg-anchor-hidden" name="answer-29422932"></a>
+
+
+<div class="zm-votebar">
+<button class="up ">
+<i class="icon vote-arrow"></i>
+<span class="count">1</span>
+<span class="label sr-only">赞同</span>
+</button>
+<button class="down ">
+<i class="icon vote-arrow"></i>
+<span class="label sr-only">反对</span>
+</button>
+</div>
+
+
+<div class="answer-head">
+<div class="zm-item-answer-author-info">
+
+<a class="zm-item-link-avatar avatar-link" href="/people/gong-yi-wei" target="_blank" data-tip="p$t$gong-yi-wei">
+<img src="https://pic4.zhimg.com/bf31d1c27f65c2f0e452dd4ec786ae13_s.png" class="zm-list-avatar avatar">
+</a>
+
+<a class="author-link" data-tip="p$t$gong-yi-wei" target="_blank" href="/people/gong-yi-wei">Ciel半仙</a><span title="想做会讲故事的人。" class="bio">，想做会讲故事的人。</span>
+</div>
+<div class="zm-item-vote-info " data-votecount="1">
+
+<span class="voters text">
+<span class="user-block"><a data-tip="p$t$cindy-30-63" href="https://www.zhihu.com/people/cindy-30-63" target="_blank" class="zg-link" title="Cindy">Cindy</a></span>
+</span>
+
+
+<span class="text">赞同</span>
+
+
+
+
+</div>
+</div>
+<div class="zm-item-rich-text js-collapse-body" data-resourceid="3167780" data-action="/answer/content" data-author-name="Ciel半仙" data-entry-url="/question/27462267/answer/84978285">
+
+
+<div class="zh-summary summary clearfix" style="display:none;">
+
+有没有觉得用cat来整理git ignore很麻烦呢。如果在github上创建project，会为你提供gitignore的template。所以就写了一个小的git插件来管理gitignore，模版当然是来自github官方的ignore模版库。Git-Ignore，<a href="//link.zhihu.com/?target=https%3A//github.com/imwithye/git-ignore" class=" external" target="_blank" rel="nofollow noreferrer"><span class="invisible">https://</span><span class="visible">github.com/imwithye/git</span><span class="invisible">-ignore</span><span class="ellipsis"></span><i class="icon-external"></i></a>。以后只要git ignore add …
+
+<a href="/question/27462267/answer/84978285" class="toggle-expand">显示全部</a>
+
+</div>
+
+
+<div class="zm-editable-content clearfix">
+有没有觉得用cat来整理git ignore很麻烦呢。如果在github上创建project，会为你提供gitignore的template。所以就写了一个小的git插件来管理gitignore，模版当然是来自github官方的ignore模版库。<br><br>Git-Ignore，<a href="//link.zhihu.com/?target=https%3A//github.com/imwithye/git-ignore" class=" external" target="_blank" rel="nofollow noreferrer"><span class="invisible">https://</span><span class="visible">github.com/imwithye/git</span><span class="invisible">-ignore</span><span class="ellipsis"></span><i class="icon-external"></i></a>。<br>以后只要git ignore add java python c就可以添加java，python，c的ignore模版啦。
+
+</div>
+
+</div>
+<a class="zg-anchor-hidden ac" name="29422932-comment"></a>
+<div class="zm-item-meta zm-item-comment-el answer-actions clearfix">
+<div class="zm-meta-panel">
+
+<span class="answer-date-link-wrap">
+<a class="answer-date-link meta-item" target="_blank" href="/question/27462267/answer/84978285">发布于 2016-02-05</a>
+</span>
+
+<a href="#" name="addcomment" class=" meta-item toggle-comment">
+<i class="z-icon-comment"></i>5 条评论</a>
+
+
+<a href="#" class="meta-item zu-autohide" name="thanks" data-thanked="false"><i class="z-icon-thank"></i>感谢</a>
+
+
+
+<a href="#" class="meta-item zu-autohide" name="share">
+<i class="z-icon-share"></i>分享</a>
+<a href="#" class="meta-item zu-autohide" name="favo">
+<i class="z-icon-collect"></i>收藏</a>
+
+
+
+
+<span class="zg-bull zu-autohide">&bull;</span>
+
+<a href="#" name="nohelp" class="meta-item zu-autohide">没有帮助</a>
+
+<span class="zg-bull zu-autohide">&bull;</span>
+<a href="#" name="report" class="meta-item zu-autohide">举报</a>
+
+
+
+<span class="zg-bull">&bull;</span>
+
+<a href="/terms#sec-licence-1" target="_blank" class="meta-item copyright"> 作者保留权利 </a>
+
+
+
+</div>
+</div>
+</div>
+
+<div tabindex="-1" class="zm-item-answer  zm-item-expanded"
+
+itemscope itemtype="http://schema.org/Answer"
+data-aid="32736276"
+data-atoken="93240343"
+data-collapsed="0"
+data-created="1459496248"
+data-deleted="0"
+data-helpful="1"
+data-isowner="0"
+data-copyable="1"
+
+
+>
+<a class="zg-anchor-hidden" name="answer-32736276"></a>
+
+
+<div class="zm-votebar">
+<button class="up ">
+<i class="icon vote-arrow"></i>
+<span class="count">0</span>
+<span class="label sr-only">赞同</span>
+</button>
+<button class="down ">
+<i class="icon vote-arrow"></i>
+<span class="label sr-only">反对</span>
+</button>
+</div>
+
+
+<div class="answer-head">
+<div class="zm-item-answer-author-info">
+
+<a class="zm-item-link-avatar avatar-link" href="/people/wu-que-42" target="_blank" data-tip="p$t$wu-que-42">
+<img src="https://pic1.zhimg.com/da8e974dc_s.jpg" class="zm-list-avatar avatar">
+</a>
+
+<a class="author-link" data-tip="p$t$wu-que-42" target="_blank" href="/people/wu-que-42">勿阙</a>
+</div>
+<div class="zm-item-vote-info empty" data-votecount="0">
+
+
+
+
+
+</div>
+</div>
+<div class="zm-item-rich-text js-collapse-body" data-resourceid="3167780" data-action="/answer/content" data-author-name="勿阙" data-entry-url="/question/27462267/answer/93240343">
+
+
+<div class="zh-summary summary clearfix" style="display:none;">
+
+大部分使用git的人都知道怎么让git忽略掉某个或者某些文件(使用.gitignore，如果还不知道赶紧去Google补个课吧)，但是你知道如何用git忽略掉文件中某一/几行内容吗？其实是利用git的filter，详情请看: <a href="//link.zhihu.com/?target=http%3A//yaowenjie.github.io/%25E7%25BC%2596%25E7%25A8%258B%25E7%259B%25B8%25E5%2585%25B3/%25E5%25A6%2582%25E4%25BD%2595%25E8%25AE%25A9git%25E5%25BF%25BD%25E7%2595%25A5-ignore-%25E6%258E%2589%25E6%2596%2587%25E4%25BB%25B6%25E4%25B8%25AD%25E7%259A%2584%25E5%258D%2595-%25E5%25A4%259A%25E8%25A1%258C%25E5%2586%2585%25E5%25AE%25B9" class=" wrap external" target="_blank" rel="nofollow noreferrer">如何让Git忽略掉文件中的单/多行内容<i class="icon-external"></i></a>
+
+</div>
+
+
+<div class="zm-editable-content clearfix">
+大部分使用git的人都知道怎么让git忽略掉某个或者某些文件(使用.gitignore，如果还不知道赶紧去Google补个课吧)，但是你知道如何用git忽略掉文件中某一/几行内容吗？<br>其实是利用git的filter，详情请看: <a href="//link.zhihu.com/?target=http%3A//yaowenjie.github.io/%25E7%25BC%2596%25E7%25A8%258B%25E7%259B%25B8%25E5%2585%25B3/%25E5%25A6%2582%25E4%25BD%2595%25E8%25AE%25A9git%25E5%25BF%25BD%25E7%2595%25A5-ignore-%25E6%258E%2589%25E6%2596%2587%25E4%25BB%25B6%25E4%25B8%25AD%25E7%259A%2584%25E5%258D%2595-%25E5%25A4%259A%25E8%25A1%258C%25E5%2586%2585%25E5%25AE%25B9" class=" wrap external" target="_blank" rel="nofollow noreferrer">如何让Git忽略掉文件中的单/多行内容<i class="icon-external"></i></a>
+
+</div>
+
+</div>
+<a class="zg-anchor-hidden ac" name="32736276-comment"></a>
+<div class="zm-item-meta zm-item-comment-el answer-actions clearfix">
+<div class="zm-meta-panel">
+
+<span class="answer-date-link-wrap">
+<a class="answer-date-link meta-item" target="_blank" href="/question/27462267/answer/93240343">发布于 2016-04-01</a>
+</span>
+
+<a href="#" name="addcomment" class=" meta-item toggle-comment">
+<i class="z-icon-comment"></i>添加评论</a>
+
+
+<a href="#" class="meta-item zu-autohide" name="thanks" data-thanked="false"><i class="z-icon-thank"></i>感谢</a>
+
+
+
+<a href="#" class="meta-item zu-autohide" name="share">
+<i class="z-icon-share"></i>分享</a>
+<a href="#" class="meta-item zu-autohide" name="favo">
+<i class="z-icon-collect"></i>收藏</a>
+
+
+
+
+<span class="zg-bull zu-autohide">&bull;</span>
+
+<a href="#" name="nohelp" class="meta-item zu-autohide">没有帮助</a>
+
+<span class="zg-bull zu-autohide">&bull;</span>
+<a href="#" name="report" class="meta-item zu-autohide">举报</a>
+
+
+
+<span class="zg-bull">&bull;</span>
+
+<a href="/terms#sec-licence-1" target="_blank" class="meta-item copyright"> 作者保留权利 </a>
+
+
+
+</div>
+</div>
+</div>
+
+<div tabindex="-1" class="zm-item-answer  zm-item-expanded"
+
+itemscope itemtype="http://schema.org/Answer"
+data-aid="24821360"
+data-atoken="73495902"
+data-collapsed="0"
+data-created="1448242571"
+data-deleted="0"
+data-helpful="1"
+data-isowner="0"
+data-copyable="1"
+
+
+>
+<a class="zg-anchor-hidden" name="answer-24821360"></a>
+
+
+<div class="zm-votebar">
+<button class="up ">
+<i class="icon vote-arrow"></i>
+<span class="count">0</span>
+<span class="label sr-only">赞同</span>
+</button>
+<button class="down ">
+<i class="icon vote-arrow"></i>
+<span class="label sr-only">反对</span>
+</button>
+</div>
+
+
+<div class="answer-head">
+<div class="zm-item-answer-author-info">
+<span class="name">匿名用户</span>
+</div>
+<div class="zm-item-vote-info empty" data-votecount="0">
+
+
+
+
+
+</div>
+</div>
+<div class="zm-item-rich-text js-collapse-body" data-resourceid="3167780" data-action="/answer/content" data-author-name="匿名用户" data-entry-url="/question/27462267/answer/73495902">
+
+
+<div class="zh-summary summary clearfix" style="display:none;">
+
+git log --author="$(git config --get user.name)" --pretty=tformat: --numstat | gawk '{ add += $1 ; subs += $2 ; loc += $1 - $2 } END { printf "added lines: %s removed lines : %s total lines: %s\n",add,subs,loc }' - 
+
+git log --pretty='%aN…
+
+<a href="/question/27462267/answer/73495902" class="toggle-expand">显示全部</a>
+
+</div>
+
+
+<div class="zm-editable-content clearfix">
+<div class="highlight"><pre><code class="language-text">git log --author="$(git config --get user.name)" --pretty=tformat: --numstat | gawk '{ add += $1 ; subs += $2 ; loc += $1 - $2 } END { printf "added lines: %s removed lines : %s total lines: %s\n",add,subs,loc }' -    
+
+git log --pretty='%aN' | sort | uniq -c | sort -k1 -n -r 
+</code></pre></div><br>这2个算吗
+
+</div>
+
+</div>
+<a class="zg-anchor-hidden ac" name="24821360-comment"></a>
+<div class="zm-item-meta zm-item-comment-el answer-actions clearfix">
+<div class="zm-meta-panel">
+
+<span class="answer-date-link-wrap">
+<a class="answer-date-link meta-item" target="_blank" href="/question/27462267/answer/73495902">发布于 2015-11-23</a>
+</span>
+
+<a href="#" name="addcomment" class=" meta-item toggle-comment">
+<i class="z-icon-comment"></i>添加评论</a>
+
+
+<a href="#" class="meta-item zu-autohide" name="thanks" data-thanked="false"><i class="z-icon-thank"></i>感谢</a>
+
+
+
+<a href="#" class="meta-item zu-autohide" name="share">
+<i class="z-icon-share"></i>分享</a>
+<a href="#" class="meta-item zu-autohide" name="favo">
+<i class="z-icon-collect"></i>收藏</a>
+
+
+
+
+<span class="zg-bull zu-autohide">&bull;</span>
+
+<a href="#" name="nohelp" class="meta-item zu-autohide">没有帮助</a>
+
+<span class="zg-bull zu-autohide">&bull;</span>
+<a href="#" name="report" class="meta-item zu-autohide">举报</a>
+
+
+
+<span class="zg-bull">&bull;</span>
+
+<a href="/terms#sec-licence-1" target="_blank" class="meta-item copyright"> 作者保留权利 </a>
+
+
+
+</div>
+</div>
+</div>
+
+<div tabindex="-1" class="zm-item-answer  zm-item-expanded"
+
+itemscope itemtype="http://schema.org/Answer"
+data-aid="24753686"
+data-atoken="73326916"
+data-collapsed="0"
+data-created="1448121907"
+data-deleted="0"
+data-helpful="1"
+data-isowner="0"
+data-copyable="1"
+
+
+>
+<a class="zg-anchor-hidden" name="answer-24753686"></a>
+
+
+<div class="zm-votebar">
+<button class="up ">
+<i class="icon vote-arrow"></i>
+<span class="count">0</span>
+<span class="label sr-only">赞同</span>
+</button>
+<button class="down ">
+<i class="icon vote-arrow"></i>
+<span class="label sr-only">反对</span>
+</button>
+</div>
+
+
+<div class="answer-head">
+<div class="zm-item-answer-author-info">
+
+<a class="zm-item-link-avatar avatar-link" href="/people/drdr-xp" target="_blank" data-tip="p$t$drdr-xp">
+<img src="https://pic1.zhimg.com/cb0f8fb72ec641f5f096d50bc5d2c770_s.png" class="zm-list-avatar avatar">
+</a>
+
+<a class="author-link" data-tip="p$t$drdr-xp" target="_blank" href="/people/drdr-xp">drdr xp</a><span title="要了几天饱饭就不记得西北风啥味了" class="bio">，要了几天饱饭就不记得西北风啥味了</span>
+</div>
+<div class="zm-item-vote-info empty" data-votecount="0">
+
+
+
+
+
+</div>
+</div>
+<div class="zm-item-rich-text js-collapse-body" data-resourceid="3167780" data-action="/answer/content" data-author-name="drdr xp" data-entry-url="/question/27462267/answer/73326916">
+
+
+<div class="zh-summary summary clearfix" style="display:none;">
+<img src="https://pic3.zhimg.com/51e34d0769a6a39b0d7a38e78e6ae8fa_200x112.png" data-rawwidth="629" data-rawheight="252" class="origin_image inline-img zh-lightbox-thumb" data-original="https://pic3.zhimg.com/51e34d0769a6a39b0d7a38e78e6ae8fa_r.png">
+git-auto-squashgit-auto-squash 可以将提交历史中连续的fixup 合并到它之前最早的1个正式提交点上，类似不需要交互的rebase --interactive。Usage:
+ &gt; git-auto-squash [-f] [-p &lt;pattern&gt;] &lt;rev-list options&gt;...
+举个栗子运行 git-auto-squash 后将所有 …
+
+<a href="/question/27462267/answer/73326916" class="toggle-expand">显示全部</a>
+
+</div>
+
+
+<div class="zm-editable-content clearfix">
+git-auto-squash<br><p>git-auto-squash 可以将提交历史中连续的fixup 合并到它之前最早的1个正式提交点上，类似不需要交互的rebase --interactive。</p><div class="highlight"><pre><code class="language-text">Usage:
+  &gt; git-auto-squash [-f] [-p &lt;pattern&gt;] &lt;rev-list options&gt;...
+</code></pre></div>举个栗子<p>运行 git-auto-squash 后将所有 fixup! 开头的message的commit 合并到最早遇到的非fixup!的提交点”ok”上.</p><br><noscript><img src="https://pic3.zhimg.com/51e34d0769a6a39b0d7a38e78e6ae8fa_b.png" data-rawwidth="629" data-rawheight="252" class="origin_image zh-lightbox-thumb" width="629" data-original="https://pic3.zhimg.com/51e34d0769a6a39b0d7a38e78e6ae8fa_r.png"></noscript><img src="//zhstatic.zhihu.com/assets/zhihu/ztext/whitedot.jpg" data-rawwidth="629" data-rawheight="252" class="origin_image zh-lightbox-thumb lazy" width="629" data-original="https://pic3.zhimg.com/51e34d0769a6a39b0d7a38e78e6ae8fa_r.png" data-actualsrc="https://pic3.zhimg.com/51e34d0769a6a39b0d7a38e78e6ae8fa_b.png"><br><br>处理merge的栗子<p>git-auto-squash 也可以处理merge的fixup。对于merge commit，如果它的其中一个parent被squash掉了，它也会被squash掉:</p><noscript><img src="https://pic2.zhimg.com/0a8785639b9b1959cf54018cc36622b9_b.png" data-rawwidth="604" data-rawheight="544" class="origin_image zh-lightbox-thumb" width="604" data-original="https://pic2.zhimg.com/0a8785639b9b1959cf54018cc36622b9_r.png"></noscript><img src="//zhstatic.zhihu.com/assets/zhihu/ztext/whitedot.jpg" data-rawwidth="604" data-rawheight="544" class="origin_image zh-lightbox-thumb lazy" width="604" data-original="https://pic2.zhimg.com/0a8785639b9b1959cf54018cc36622b9_r.png" data-actualsrc="https://pic2.zhimg.com/0a8785639b9b1959cf54018cc36622b9_b.png"><p>这样在某些merge commit有3个或3个以上的parent的时候，会丢弃某些中间的merge点。 但不影响最终结果。</p><p>处理merge的历史的时候建议加上-t参数， 以保证被重写的历史里所有的分支都会指向新的提交点。</p><p>主页:  <a href="//link.zhihu.com/?target=http%3A//drmingdrmer.github.io/git/2015/05/17/git-auto-squash.html" class=" wrap external" target="_blank" rel="nofollow noreferrer">随手改变世界之 git-auto-squash<i class="icon-external"></i></a></p>下载<p><a href="//link.zhihu.com/?target=https%3A//gist.github.com/drmingdrmer/2f7a2b9afdff6551208b" class=" wrap external" target="_blank" rel="nofollow noreferrer">git-auto-squash on gist<i class="icon-external"></i></a></p><p>复制脚本到/usr/local/bin下并:</p><div class="highlight"><pre><code class="language-text">chmod +x git-auto-squash
+</code></pre></div>
+
+</div>
+
+</div>
+<a class="zg-anchor-hidden ac" name="24753686-comment"></a>
+<div class="zm-item-meta zm-item-comment-el answer-actions clearfix">
+<div class="zm-meta-panel">
+
+<span class="answer-date-link-wrap">
+<a class="answer-date-link meta-item" target="_blank" href="/question/27462267/answer/73326916">发布于 2015-11-22</a>
+</span>
+
+<a href="#" name="addcomment" class=" meta-item toggle-comment">
+<i class="z-icon-comment"></i>添加评论</a>
+
+
+<a href="#" class="meta-item zu-autohide" name="thanks" data-thanked="false"><i class="z-icon-thank"></i>感谢</a>
+
+
+
+<a href="#" class="meta-item zu-autohide" name="share">
+<i class="z-icon-share"></i>分享</a>
+<a href="#" class="meta-item zu-autohide" name="favo">
+<i class="z-icon-collect"></i>收藏</a>
+
+
+
+
+<span class="zg-bull zu-autohide">&bull;</span>
+
+<a href="#" name="nohelp" class="meta-item zu-autohide">没有帮助</a>
+
+<span class="zg-bull zu-autohide">&bull;</span>
+<a href="#" name="report" class="meta-item zu-autohide">举报</a>
+
+
+
+<span class="zg-bull">&bull;</span>
+
+<a href="/terms#sec-licence-1" target="_blank" class="meta-item copyright"> 作者保留权利 </a>
+
+
+
+</div>
+</div>
+</div>
+
+<div tabindex="-1" class="zm-item-answer  zm-item-expanded"
+
+itemscope itemtype="http://schema.org/Answer"
+data-aid="24718818"
+data-atoken="73240294"
+data-collapsed="0"
+data-created="1448079205"
+data-deleted="0"
+data-helpful="1"
+data-isowner="0"
+data-copyable="1"
+
+
+>
+<a class="zg-anchor-hidden" name="answer-24718818"></a>
+
+
+<div class="zm-votebar">
+<button class="up ">
+<i class="icon vote-arrow"></i>
+<span class="count">0</span>
+<span class="label sr-only">赞同</span>
+</button>
+<button class="down ">
+<i class="icon vote-arrow"></i>
+<span class="label sr-only">反对</span>
+</button>
+</div>
+
+
+<div class="answer-head">
+<div class="zm-item-answer-author-info">
+
+<a class="zm-item-link-avatar avatar-link" href="/people/li-da-shan-15-59" target="_blank" data-tip="p$t$li-da-shan-15-59">
+<img src="https://pic4.zhimg.com/5407639a2ba0e3943f364e64e33b40eb_s.jpg" class="zm-list-avatar avatar">
+</a>
+
+<a class="author-link" data-tip="p$t$li-da-shan-15-59" target="_blank" href="/people/li-da-shan-15-59">李大山</a><span title="（弃用）" class="bio">，（弃用）</span>
+</div>
+<div class="zm-item-vote-info empty" data-votecount="0">
+
+
+
+
+
+</div>
+</div>
+<div class="zm-item-rich-text js-collapse-body" data-resourceid="3167780" data-action="/answer/content" data-author-name="李大山" data-entry-url="/question/27462267/answer/73240294">
+
+
+<div class="zh-summary summary clearfix" style="display:none;">
+
+不知道[这个](<a href="//link.zhihu.com/?target=https%3A//github.com/topwood" class=" wrap external" target="_blank" rel="nofollow noreferrer">topwood (lijie) · GitHub<i class="icon-external"></i></a>)算不算。。
+
+</div>
+
+
+<div class="zm-editable-content clearfix">
+不知道[这个](<a href="//link.zhihu.com/?target=https%3A//github.com/topwood" class=" wrap external" target="_blank" rel="nofollow noreferrer">topwood (lijie) · GitHub<i class="icon-external"></i></a>)算不算。。
+
+</div>
+
+</div>
+<a class="zg-anchor-hidden ac" name="24718818-comment"></a>
+<div class="zm-item-meta zm-item-comment-el answer-actions clearfix">
+<div class="zm-meta-panel">
+
+<span class="answer-date-link-wrap">
+<a class="answer-date-link meta-item" target="_blank" href="/question/27462267/answer/73240294">发布于 2015-11-21</a>
+</span>
+
+<a href="#" name="addcomment" class=" meta-item toggle-comment">
+<i class="z-icon-comment"></i>添加评论</a>
+
+
+<a href="#" class="meta-item zu-autohide" name="thanks" data-thanked="false"><i class="z-icon-thank"></i>感谢</a>
+
+
+
+<a href="#" class="meta-item zu-autohide" name="share">
+<i class="z-icon-share"></i>分享</a>
+<a href="#" class="meta-item zu-autohide" name="favo">
+<i class="z-icon-collect"></i>收藏</a>
+
+
+
+
+<span class="zg-bull zu-autohide">&bull;</span>
+
+<a href="#" name="nohelp" class="meta-item zu-autohide">没有帮助</a>
+
+<span class="zg-bull zu-autohide">&bull;</span>
+<a href="#" name="report" class="meta-item zu-autohide">举报</a>
+
+
+
+<span class="zg-bull">&bull;</span>
+
+<a href="/terms#sec-licence-1" target="_blank" class="meta-item copyright"> 作者保留权利 </a>
+
+
+
+</div>
+</div>
+</div>
+
+
+</div>
+
+<div id="zh-question-collapsed-link" class="zu-question-collap-title" style="display:" >
+<a href="javascript:;" name="expand" class="zg-link-gray" id="zh-question-collapsed-switcher">
+<span id="zh-question-collapsed-num">2</span> 个回答被折叠
+</a>
+（<a target="_blank" href="http://www.zhihu.com/question/20120168" class="zg-link-gray">为什么？</a>）
+</div>
+<div id="zh-question-collapsed-wrap" class="zh-question-answer-wrapper" style="display:none"></div>
+<a name="draft"></a>
+<div id="zh-question-answer-form-wrap" class="zh-question-answer-form-wrap">
+<div class="zm-editable-tip"></div>
+<div class="zm-editable-content"></div>
+</div>
+<!-- 版权演示 -->
+
+<script type="text/x-template" id="copyright-demo-template">
+<article>
+
+<section>
+<p class="copyright-demo-title"> 这是你的回答正文 </p>
+<div class="copyright-demo-region"></div>
+<div class="copyright-demo-region"></div>
+<div class="copyright-demo-region"></div>
+<div class="copyright-demo-region"></div>
+<div class="copyright-demo-region"></div>
+</section>
+
+<section>
+<p class="copyright-demo-title"> 当其他人想复制你的一段回答 </p>
+<div class="copyright-demo-region frame2-region" id="copyright-demo-region1">
+<span class="copyright-ico-indicator" id="copyright-demo-indicator"></span>
+</div>
+<div class="copyright-demo-region frame2-region" id="copyright-demo-region2"></div>
+<div class="copyright-demo-region frame2-region" id="copyright-demo-region3"></div>
+<div class="copyright-demo-region frame2-region" id="copyright-demo-region4"></div>
+<div class="copyright-demo-region"></div>
+</section>
+
+<section id="copyright-demo-frame3">
+<p class="copyright-demo-title"> 复制将受限，同时会弹出提醒 </p>
+<div class="copyright-demo-region copyright-demo-region-selected"></div>
+<div class="copyright-demo-region copyright-demo-region-selected"></div>
+<div class="copyright-demo-region copyright-demo-region-selected"></div>
+<div class="copyright-demo-region copyright-demo-region-selected"></div>
+<div class="copyright-demo-region"></div>
+<span class="copyright-ico-pointer copyright-demo-pointer"></span>
+</section>
+</article>
+</script>
+
+
+
+</div>
+</div>
+
+
+<div class="zu-main-sidebar">
+
+<div class="zm-side-section">
+<div class="zm-side-section-inner" id="zh-question-side-header-wrap">
+<button data-follow="q:m:button" class="follow-button zg-follow zg-btn-green" data-id="3167780">关注问题</button>
+
+<div class="zg-btn-white" id="zh-question-operation-menu"
+>
+<i class="zg-icon-dropdown-menu zg-icon"></i><b class="hide-text">设置</b>
+</div>
+
+<div class="zh-question-followers-sidebar">
+<div class="zg-gray-normal">
+
+<a href="/question/27462267/followers"><strong>1393</strong></a>
+人关注该问题
+
+</div>
+
+<div class="list zu-small-avatar-list zg-clear">
+
+<a title="田雅文"
+data-tip="p$t$tian-ya-wen-60-59"
+class="zm-item-link-avatar"
+href="/people/tian-ya-wen-60-59">
+<img src="https://pic4.zhimg.com/74fbe60032663221f812bd64eabfbd5b_s.jpg" class="zm-item-img-avatar">
+</a>
+
+<a title="沙吉泉"
+data-tip="p$t$shajiquan"
+class="zm-item-link-avatar"
+href="/people/shajiquan">
+<img src="https://pic4.zhimg.com/04617817c0bcc2d06c6a5245d0d10ae3_s.png" class="zm-item-img-avatar">
+</a>
+
+<a title="吴华亚"
+data-tip="p$t$wu-hua-ya-66"
+class="zm-item-link-avatar"
+href="/people/wu-hua-ya-66">
+<img src="https://pic2.zhimg.com/6d8464fd2d4a945c097ef70eaf6130fd_s.jpg" class="zm-item-img-avatar">
+</a>
+
+<a title="一心"
+data-tip="p$t$haobinwangzi"
+class="zm-item-link-avatar"
+href="/people/haobinwangzi">
+<img src="https://pic4.zhimg.com/e1ba3291707d04398c1c12204b68212f_s.jpg" class="zm-item-img-avatar">
+</a>
+
+<a title="腹有冰格气自华"
+data-tip="p$t$han-ge-yi-27"
+class="zm-item-link-avatar"
+href="/people/han-ge-yi-27">
+<img src="https://pic3.zhimg.com/59610b6728d3b699a0e67036cc207212_s.jpg" class="zm-item-img-avatar">
+</a>
+
+<a title="昆一刀"
+data-tip="p$t$lijuns"
+class="zm-item-link-avatar"
+href="/people/lijuns">
+<img src="https://pic1.zhimg.com/da8e974dc_s.jpg" class="zm-item-img-avatar">
+</a>
+
+<a title="陈军"
+data-tip="p$t$chen-jun-1"
+class="zm-item-link-avatar"
+href="/people/chen-jun-1">
+<img src="https://pic1.zhimg.com/da8e974dc_s.jpg" class="zm-item-img-avatar">
+</a>
+
+<a title="灵长目人科人属"
+data-tip="p$t$direcuts"
+class="zm-item-link-avatar"
+href="/people/direcuts">
+<img src="https://pic4.zhimg.com/ac595b6349d020e5f84cac5df556bcd3_s.jpg" class="zm-item-img-avatar">
+</a>
+
+<a title="Spike Thomas"
+data-tip="p$t$spike-thomas"
+class="zm-item-link-avatar"
+href="/people/spike-thomas">
+<img src="https://pic1.zhimg.com/6578b0494_s.jpg" class="zm-item-img-avatar">
+</a>
+
+<a title="victor"
+data-tip="p$t$victor-76"
+class="zm-item-link-avatar"
+href="/people/victor-76">
+<img src="https://pic4.zhimg.com/9b67325a98c403913172d23ab2d7a577_s.jpg" class="zm-item-img-avatar">
+</a>
+
+<a title="pandapeng"
+data-tip="p$t$pandapeng"
+class="zm-item-link-avatar"
+href="/people/pandapeng">
+<img src="https://pic1.zhimg.com/da8e974dc_s.jpg" class="zm-item-img-avatar">
+</a>
+
+<a title="喜羊羊"
+data-tip="p$t$xu-yang-44"
+class="zm-item-link-avatar"
+href="/people/xu-yang-44">
+<img src="https://pic1.zhimg.com/da8e974dc_s.jpg" class="zm-item-img-avatar">
+</a>
+
+<a title="蔡白银"
+data-tip="p$t$cai-bai-yin"
+class="zm-item-link-avatar"
+href="/people/cai-bai-yin">
+<img src="https://pic1.zhimg.com/da8e974dc_s.jpg" class="zm-item-img-avatar">
+</a>
+
+<a title="AlwenLu"
+data-tip="p$t$alwenlu"
+class="zm-item-link-avatar"
+href="/people/alwenlu">
+<img src="https://pic3.zhimg.com/98b54194a2a040b915b53d4c40a2a65e_s.jpg" class="zm-item-img-avatar">
+</a>
+
+<a title="邓超"
+data-tip="p$t$dcmi"
+class="zm-item-link-avatar"
+href="/people/dcmi">
+<img src="https://pic3.zhimg.com/a1c25618b39903964c93624c69df627a_s.jpg" class="zm-item-img-avatar">
+</a>
+
+<a title="灯语"
+data-tip="p$t$deng-yu-90-89"
+class="zm-item-link-avatar"
+href="/people/deng-yu-90-89">
+<img src="https://pic1.zhimg.com/da8e974dc_s.jpg" class="zm-item-img-avatar">
+</a>
+
+<a title="ahsclhl"
+data-tip="p$t$ahsclhl"
+class="zm-item-link-avatar"
+href="/people/ahsclhl">
+<img src="https://pic1.zhimg.com/da8e974dc_s.jpg" class="zm-item-img-avatar">
+</a>
+
+<a title="谢运明"
+data-tip="p$t$myxvisual"
+class="zm-item-link-avatar"
+href="/people/myxvisual">
+<img src="https://pic3.zhimg.com/d5c915c79f953bd11b3e14c04c6da17e_s.jpg" class="zm-item-img-avatar">
+</a>
+
+</div>
+
+</div>
+</div>
+</div>
+
+<div class="shameimaru-placeholder" data-loc="question_up" data-params='{&quot;question_token&quot;: 27462267}'></div>
+<div class="zm-side-section">
+<div class="zm-side-section-inner">
+<div id="zh-question-related-questions" class="zh-question-related-questions clearfix" data-za-module="RelatedQuestions">
+
+<h3>相关问题</h3>
+<ul itemprop="relatedQuestion" itemscope itemtype="http://schema.org/ItemList">
+
+<li itemprop="itemListElement" itemscope itemtype="http://schema.org/Question" data-za-module="QuestionItem" data-za-index>
+<a class="question_link" href="/question/20295926" data-id="298643">GitCafe 这样的代码托管网站在国内的前景如何？</a> <span class="num">56 个回答</span><meta itemprop="followerCount" content="527" />
+</li>
+
+<li itemprop="itemListElement" itemscope itemtype="http://schema.org/Question" data-za-module="QuestionItem" data-za-index>
+<a class="question_link" href="/question/19601997" data-id="20755">Git 相比 svn 和其他版本管理工具的核心优势有哪些？</a> <span class="num">22 个回答</span><meta itemprop="followerCount" content="331" />
+</li>
+
+<li itemprop="itemListElement" itemscope itemtype="http://schema.org/Question" data-za-module="QuestionItem" data-za-index>
+<a class="question_link" href="/question/19931404" data-id="152608">GitHub 是怎么火起来的？</a> <span class="num">19 个回答</span><meta itemprop="followerCount" content="1888" />
+</li>
+
+<li itemprop="itemListElement" itemscope itemtype="http://schema.org/Question" data-za-module="QuestionItem" data-za-index>
+<a class="question_link" href="/question/22438484" data-id="1156261">百度、阿里、腾讯之类的大公司用 Git 吗？他们如何管理源代码？</a> <span class="num">87 个回答</span><meta itemprop="followerCount" content="2297" />
+</li>
+
+<li itemprop="itemListElement" itemscope itemtype="http://schema.org/Question" data-za-module="QuestionItem" data-za-index>
+<a class="question_link" href="/question/21271773" data-id="689408">github.io 和 github.com 有什么区别？</a> <span class="num">2 个回答</span><meta itemprop="followerCount" content="56" />
+</li>
+
+</ul>
+</div>
+</div>
+</div>
+
+<div class="zm-side-section">
+<div class="zm-side-section-inner">
+<h3>问题状态</h3>
+<div class="zg-gray-normal">
+最近活动于 <span class="time">昨天 13:53</span>
+<span class="zg-bull">&bull;</span>
+<a href="/question/27462267/log">查看问题日志</a>
+</div>
+<div class="zg-gray-normal">
+被浏览 <strong>10073</strong> 次，相关话题关注者 <strong>8140</strong> 人
+</div>
+</div>
+</div>
+<div class="shameimaru-placeholder" data-loc="question_down" data-params='{&quot;question_token&quot;: 27462267}'></div>
+
+</div>
+
+
+</div>
+
+
+<div id="zh-footer" class="zh-footer">
+<div class="content zg-wrap clearfix">
+<ul>
+
+<li><a href="https://liukanshan.zhihu.com" target="_blank">刘看山</a></li>
+
+<li><a href="/question/19581624" target="_blank">知乎指南</a></li>
+<li><a href="javascript:;" id="js-feedback-button">建议反馈</a></li>
+
+<li><a href="/app" target="_blank">移动应用</a></li>
+<li><a href="/careers">加入知乎</a></li>
+<li><a href="/terms" target="_blank">知乎协议</a></li>
+<li><a href="mailto:bd@zhihu.com">商务合作</a></li>
+
+</ul>
+
+<span class="copy">&copy; 2016 知乎</span>
+
+</div>
+</div>
+
+<script type="text/json" class="json-inline" data-name="guiders2">{"exclusive-popover":{},"section":{},"editor":[]}</script>
+<script type="text/json" class="json-inline" data-name="current_user">["JackonYang","jackonyang","https:\/\/pic1.zhimg.com\/b742df688_s.jpg","38e771f4691159fbe107083a02f18fe8","\u81ea\u7531\u804c\u4e1a. linux \u63a7 \/ python \u63a7 \/ vim \u63a7 \/ git \u63a7",0,0,true,"i@jackon.me","",0,true,false,false,"29517598949376"]</script>
+<script type="text/json" class="json-inline" data-name="user_status">[null,null]</script>
+<script type="text/json" class="json-inline" data-name="env">["zhihu.com","comet.zhihu.com",false,null,false]</script>
+<script type="text/json" class="json-inline" data-name="permissions">[]</script>
+
+
+<script type="text/json" class="json-inline" data-name="ga_vars">{"user_created":1366006903000,"now":1460952378000,"abtest_mask":"---------0--------------------","user_attr":[1,0,0,"-",1],"user_hash":"38e771f4691159fbe107083a02f18fe8"}</script>
+<script type="text/json" class="json-inline" data-name="ra-urls">{"Report":"https:\/\/static.zhihu.com\/static\/revved\/-\/apps\/Report.64553f8c.js","Community":"https:\/\/static.zhihu.com\/static\/revved\/-\/apps\/Community.58107d92.js","common":"https:\/\/static.zhihu.com\/static\/revved\/-\/apps\/common.77b64b3f.js","CommentApp":"https:\/\/static.zhihu.com\/static\/revved\/-\/apps\/CommentApp.72ca01c7.js"}</script>
+
+<script type="text/json" class="json-inline" data-name="current_question">{"status":"normal","isLocked":0,"isEditLocked":false,"detailEditReasonRequired":false,"editPermission":false,"isAnon":0,"qid":3167780,"urlToken":27462267,"showInvitePanel":false,"askAboutMember":0}</script>
+<script type="text/json" class="json-inline" data-name="current_question_owner">false</script>
+<script type="text/json" class="json-inline" data-name="draft">[]</script>
+<script type="text/json" class="json-inline" data-name="my_answer">{}</script>
+<script type="text/json" class="json-inline" data-name="current_question_bio">{"selected_bio":"headline","type":"HEADLINE","value":"\u81ea\u7531\u804c\u4e1a. linux \u63a7 \/ python \u63a7 \/ vim \u63a7 \/ git \u63a7"}</script>
+
+<script type="text/json" class="json-inline" data-name="redirect_to">""</script>
+
+
+
+<script src="https://static.zhihu.com/static/revved/-/js/vendor.ff76fbae.js"></script>
+<script src="https://static.zhihu.com/static/revved/-/js/closure/base.a6535b81.js"></script>
+
+<script src="https://static.zhihu.com/static/revved/-/js/closure/common.2771d613.js"></script>
+
+
+<script src="https://static.zhihu.com/static/revved/-/js/closure/richtexteditor.4202db11.js" async></script>
+<script src="https://static.zhihu.com/static/revved/-/js/closure/page-main.5d3b2447.js"></script>
+<meta name="entry" content="ZH.entrySQ" data-module-id="page-main">
+
+<script type="text/zscript" znonce="4a5d2f833ecf4b6a994aaf36b2f4ef8d"></script>
+
+<input type="hidden" name="_xsrf" value="0dba3bfe32f104c173c38174180ef5d1"/>
+</body>
+</html>
